@@ -1,0 +1,647 @@
+\chapter{习题}
+\section{第一章习题}
+\begin{homework}[1.1]
+设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t=1,t=0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义
+\[
+d(x,y)=\sup_{0\le t\le 1}|x(t)-y(t)|+\sup_{0\le t\le 1}|x'(t)-y'(t)|.
+\]
+
+1) 证明 $D$ 是距离空间；
+
+2) 指出 $D$ 中点列按距离收敛的意义；
+
+3) 证明 $D$ 是完备的。
+\end{homework}
+
+\begin{homework}[1.2]
+证明如果 $d$ 是集 $X$ 上的距离，则
+\[
+d_1=\frac{d}{1+d}
+\]
+也是 $X$ 上的距离。
+\end{homework}
+\begin{homework}[1.3]
+设 $d_1,d_2,\ldots,d_m,\ldots$ 是集 $X$ 上的距离，证明：
+
+1) $d=\sup\limits_{1\le i\le m} d_i$；
+
+2) $d=\sqrt{d_1^2+d_2^2+\cdots+d_m^2}$；
+
+3) $d=\sum_{k=1}^{\infty} \frac{1}{2^k}\cdot \frac{d_k}{1+d_k}$；
+
+中的每一个也是 $X$ 上的距离。
+\end{homework}
+
+\begin{homework}[1.4]
+设 $X$ 是在 $|z|<1$ 中解析且在 $|z|\le1$ 上连续的复函数的全体，在其中定义
+\[
+d(x,y)=\max_{|t|=1} |x(t)-y(t)|.
+\]
+证明 $(X,d)$ 是距离空间。
+\end{homework}
+
+\begin{homework}[1.5]
+在距离空间中，一个半径为 $4$ 的开球能否成为一个半径为 $3$ 的开球的真子集？
+\end{homework}
+
+\begin{homework}[1.6]
+证明在距离空间中，如果一个半径为 $7$ 的开球包含在一个半径为 $3$ 的开球中，则这两个球重合。
+\end{homework}
+
+\begin{homework}[1.7]
+证明在空间 $s$ 中，按距离收敛等价于按坐标收敛。
+\end{homework}
+
+\begin{homework}[1.8]
+试举一例说明有界集不全是有界集。
+\end{homework}
+
+\begin{homework}[1.9]
+证明距离空间中每一个 Cauchy 列是有界集。
+\end{homework}
+
+\begin{homework}[1.10]
+证明距离空间的完备子空间是闭子空间。
+\end{homework}
+
+\begin{homework}[1.11]
+证明如果距离空间是可分的，则它的任意子空间也是可分的；反之，如果距离空间不可分，它的子空间是否也不可分？
+\end{homework}
+\begin{homework}[1.12]
+设 $(X,d)$ 是距离空间，$A\subset X$，令
+\[
+f(x)=\inf_{y\in A} d(x,y) \qquad (x\in X).
+\]
+证明 $f(x)$ 是 $X$ 上的连续函数。
+\end{homework}
+
+\begin{homework}[1.13]
+设 $F_1, F_2$ 是距离空间 $X$ 中不相交的闭集，证明存在 $X$ 上的连续函数 $f(x)$，使得
+当 $x\in F_1$ 时 $f(x)=0$，当 $x\in F_2$ 时 $f(x)=1$。
+\end{homework}
+
+\begin{homework}[1.14]
+设 $X$ 是距离空间，证明：如果在 $X$ 中，任一半径趋于零的闭球套具有非空交，则空间 $X$ 是完备的。
+\end{homework}
+
+\begin{homework}[1.15]
+设 $X$ 是完备距离空间，${\mathcal F}$ 是 $X$ 上的实连续函数族且具有性质：
+对于每一 $x\in X$，存在常数 $M_x>0$，使得对每一 $F\in{\mathcal F}$，
+\[
+|F(x)|\le M_x.
+\]
+
+证明：存在开集 $U$ 及常数 $M>0$，使得对于每一 $x\in U$ 及所有 $F\in{\mathcal F}$，
+\[
+|F(x)|\le M.
+\]
+\end{homework}
+\begin{homework}[1.16]
+举例说明，在压缩映射原理中：
+\begin{enumerate}
+    \item 空间完备性条件不可少；
+    \item 映射 $T$ 所满足的条件不能代以条件
+    \[
+        d(Tx,Ty)<d(x,y)\qquad (x\ne y).
+    \]
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.17]
+证明：存在闭区间 $[0,1]$ 上的连续函数 $x(t)$，使得
+\[
+x(t)=\frac12 \sin x(t)-a(t),
+\]
+其中 $a(t)$ 是给定的 $[0,1]$ 上的连续函数。
+\end{homework}
+
+\begin{homework}[1.18]
+设 $X$ 是完备距离空间，$T$ 是 $X$ 上到自身的映射。  
+在闭球 
+\[
+\overline{B}=\{x\in X:\ d(x_0,x)\le r\}
+\]
+上满足
+\[
+d(Tx,Ty)\le \theta d(x,y),\qquad d(x_0,Tx_0)<(1-\theta)r,\qquad 0\le \theta<1.
+\]
+证明：$T$ 在 $\overline{B}$ 上有唯一不动点。
+\end{homework}
+
+\begin{homework}[1.19]
+设 $(t_0,s_0)\in\mathbb{R}^2$，$f(t,s)$ 在 $(t_0,s_0)$ 的邻域 $N$ 中连续，  
+且  
+\[
+s_0 = f(t_0,s_0),\qquad f_s'(t,s)\ \text{在}\ N\ \text{中存在并在}\ (t_0,s_0)\ \text{连续},
+\]
+并且
+\[
+f_s'(t_0,s_0)=0.
+\]
+用压缩映射原理证明：存在 $\delta>0$ 以及连续函数 $x(t)\in C[t_0-\delta,\, t_0+\delta]$，
+使得
+\[
+s_0=x(t_0),\qquad x(t)=f(t,x(t)),\quad t\in[t_0-\delta,t_0+\delta].
+\]
+\end{homework}
+
+\begin{homework}[1.20]
+设 $X$ 是紧距离空间，$T$ 是 $X$ 上到自身的映射，并满足条件：  
+对任意 $x,y\in X$，当 $x\ne y$ 时，
+\[
+d(Tx,Ty)<d(x,y).
+\]
+证明：$T$ 在 $X$ 上有唯一不动点。
+\end{homework}
+\begin{homework}[1.21]
+设 $X=\{a,b\},\ \tau=\{X,\varnothing,\{b\}\}$，证明：
+\begin{enumerate}
+    \item $\tau$ 是 $X$ 上的一个拓扑；
+    \item $\{a\}$ 是闭集；
+    \item $\overline{\{b\}}=X$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.22]
+设 $X$ 是任一集，$\mathcal{B}_1,\mathcal{B}_2$ 是 $X$ 的子集构成的集族，它们都满足定理 1.5.1 中的条件，
+设 $\tau_1,\tau_2$ 分别是由它们决定的 $X$ 上的拓扑。证明：  
+$\tau_1 \subset \tau_2$，当且仅当对于每一 $G_1\in \mathcal{B}_1$ 及任一点 $x\in G_1$，存在 $G_2\in \mathcal{B}_2$，使得 $x\in G_2\subset G_1$。
+\end{homework}
+
+\begin{homework}[1.23]
+试举一拓扑空间的例，它是 $T_2$ 的但不是 $T_3$ 的。
+\end{homework}
+
+\begin{homework}[1.24]
+设 $X$ 是 $T_1$ 拓扑空间，证明点 $x$ 是 $X$ 中集 $E$ 的极限点，当且仅当 $x$ 的任意邻域中包含 $E$ 中的无穷多点。  
+如不假设 $X$ 是 $T_1$ 的，这个结论是否成立？
+\end{homework}
+
+\begin{homework}[1.25]
+设拓扑空间 $(X,\tau)$ 满足第二可数公理，证明从 $X$ 的任意开覆盖中可选出由最多可数个集构成的子覆盖。
+\end{homework}
+\section{第二章习题}
+\begin{homework}[2.1]
+设 $(X,\|\cdot\|)$ 是赋范空间。对于 $x,y\in X$，令
+\[
+d_1(x,y)=
+\begin{cases}
+0, & x=y,\\[4pt]
+\|x-y\|+1, & x\ne y.
+\end{cases}
+\]
+证明：$d_1$ 是 $X$ 上的距离，但不是由范数诱导的距离。
+\end{homework}
+
+\begin{homework}[2.2]
+在 $l^\infty$ 中，按坐标定义线性运算，且对 $x\in l^\infty$，$x=\{\xi_n\}$ 定义
+\[
+\|x\|=\sup_n |\xi_n|，
+\]
+证明 $l^\infty$ 是一个赋范空间。
+\end{homework}
+
+\begin{homework}[2.3]
+设 $M$ 是空间 $l^\infty$ 中除有限个坐标之外为 $0$ 的元之全体构成的子空间。证明 $M$ 不是闭子空间。
+\end{homework}
+
+\begin{homework}[2.4]
+试举例说明，在赋范空间中，由
+\[
+\sum_{n=1}^{\infty} \|x_n\| < \infty,
+\]
+一般地不能推出
+\[
+\sum_{n=1}^{\infty} x_n
+\]
+收敛。
+\end{homework}
+
+\begin{homework}[2.5]
+设 $(X,\|\cdot\|)$ 是赋范空间，$X_0$ 是 $X$ 中的稠密子集，证明：对于每一 $x\in X$，存在 $\{x_n\}\subset X_0$，使得
+\[
+x = \sum_{n=1}^{\infty} x_n
+\quad\text{并且}\quad
+\sum_{n=1}^{\infty} \|x_n\| < \infty.
+\]
+\end{homework}
+
+\begin{homework}[2.6]
+设 $(X,\|\cdot\|)$ 是赋范空间，$X\ne\{0\}$，证明：$X$ 是 Banach 空间，当且仅当 $X$ 中的单位球面
+\[
+S=\{x\in X:\|x\|=1\}
+\]
+是完备的。
+\end{homework}
+\begin{homework}[2.7]
+证明 $c_0$ 是可分的 Banach 空间。
+\end{homework}
+
+\begin{homework}[2.8]
+设 $(X_n,\|\cdot\|_n)$ 是一列赋范空间，$x=\{x_n\}$，$x_n\in X_n\ (n=1,2,\dots)$ 且满足
+\[
+\sum_{n=1}^{\infty}\|x_n\|_n^p<\infty.
+\]
+用 $X$ 表示所有此类 $x$ 的全体，按坐标定义线性运算构成的线性空间，在 $X$ 中定义
+\[
+\|x\|=\Biggl(\sum_{k=1}^{\infty}\|x_k\|_k^p\Biggr)^{1/p}\qquad (p\ge1).
+\]
+证明 $(X,\|\cdot\|)$ 是一个赋范空间。
+\end{homework}
+
+\begin{homework}[2.9]
+证明：
+\begin{enumerate}
+  \item 离散情形的 Hölder 不等式与 Minkowski 不等式；
+  \item $l^p\ (p\ge1)$ 是可分的 Banach 空间。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[2.10]
+证明任意线性空间中存在 Hamel 基。（提示：利用 Zorn 引理，参看定理 3.4.1。）
+\end{homework}
+
+\begin{homework}[2.11]
+设 $A$ 是线性空间 $X$ 中的子集。证明：
+\[
+\Co(A)
+=\Bigl\{\alpha_1x_1+\cdots+\alpha_nx_n\in X:
+n\in\mathbb{N},\ x_k\in A,\ \alpha_k\ge0,\ \sum_{k=1}^n\alpha_k=1\Bigr\}.
+\]
+\end{homework}
+
+\begin{homework}[2.12]
+设 $E$ 是直线上的 Lebesgue 可测集，且 $mE<\infty$。用 $\|\cdot\|_p$ 表示 $L^p(E)\ (p\ge1)$ 的范数，
+用 $\|\cdot\|_\infty$ 表示 $L^\infty(E)$ 的范数。证明：对于每一 $x\in L^\infty(E)$，
+\[
+\lim_{p\to\infty}\|x\|_p=\|x\|_\infty.
+\]
+\end{homework}
+
+\begin{homework}[2.13]
+设 $(X_1,\|\cdot\|_1),(X_2,\|\cdot\|_2)$ 是赋范空间，在乘积线性空间 $X_1\times X_2$ 中定义
+\[
+\|z\|_1=\|x_1\|_1+\|x_2\|_2,\qquad
+\|z\|_2=\max\{\|x_1\|_1,\|x_2\|_2\},
+\]
+其中 $z\in X_1\times X_2,\ z=(x_1,x_2)$。证明：$\|\cdot\|_1,\|\cdot\|_2$ 是 $X_1\times X_2$ 上的等价范数。
+\end{homework}
+\begin{homework}[2.14]
+设 $X$ 是区间 $[a,b]$ 上所有连续函数全体按通常方式定义线性运算所成的线性空间。对于 $x\in X$ 定义
+\[
+\|x\| = \sup_{a\le t\le b} |x(t)|,\qquad
+\|x\|_1 = \int_a^b |x(t)|\,dt.
+\]
+证明：$\|\cdot\|$ 与 $\|\cdot\|_1$ 是 $X$ 上两个不等价的范数。
+\end{homework}
+
+\begin{homework}[2.15]
+设 Banach 空间 $(X,\|\cdot\|)$ 具有 Schauder 基 $\{e_n\}$。用 $M$ 表示所有数列 $\{\xi_k\}$ 的全体，使得
+\[
+\sum_{k=1}^{\infty} \xi_k e_k
+\]
+在 $X$ 中收敛。按通常方式定义线性运算构成的线性空间，对每一 $x=\{\xi_k\}\in M$ 定义
+\[
+\|x\|_1 = \sup_n \Bigl\|\sum_{k=1}^n \xi_k e_k\Bigr\|.
+\]
+证明 $(M,\|\cdot\|_1)$ 是 Banach 空间。
+\end{homework}
+
+\begin{homework}[2.16]
+设 $(X,\|\cdot\|)$ 是赋范空间，$Y$ 是 $X$ 的子空间。对于 $x\in X$，令
+\[
+\delta = d(x,Y) := \inf_{y\in Y} \|x-y\|.
+\]
+如果存在 $y_0\in Y$ 使得 $\|x-y_0\|=\delta$，称 $y_0$ 是 $x$ 的\emph{最佳逼近}。
+
+\begin{enumerate}
+  \item 证明：如果 $Y$ 是 $X$ 的有穷维子空间，则对每一个 $x\in X$，存在最佳逼近；
+  \item 试举例说明，当 $Y$ 不是有穷维子空间时，(1) 的结论不成立；
+  \item 试举例说明，一般地，最佳逼近不唯一；
+  \item 证明：对于每一点 $x\in X$，关于子空间 $Y$ 的最佳逼近点集是凸集。
+\end{enumerate}
+\end{homework}
+\begin{homework}[2.17]
+设 $(X,\|\cdot\|)$ 是赋范空间，如果对任意 $x,y\in X$，$x\ne y$ 且
+\[
+\|x\|=\|y\|=1
+\]
+必有 $\|x+y\|<2$，称 $(X,\|\cdot\|)$ 是\emph{严格凸}赋范空间。
+
+\begin{enumerate}
+  \item 证明：赋范空间 $(X,\|\cdot\|)$ 是严格凸的，当且仅当对任意 $x,y\in X$，若
+  \[
+  \|x+y\|=\|x\|+\|y\|
+  \]
+  则必有 $x=\alpha y\ (\alpha>0)$。
+  \item 证明：在严格凸赋范空间中，对于每一个 $x\in X$，关于任意子空间 $Y$ 的最佳逼近是唯一的。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[2.18]
+设 $(X,\|\cdot\|)$ 是赋范空间。如果对任意 $\varepsilon>0$，存在 $\delta>0$，当
+\[
+\|x-y\|\ge\varepsilon,\quad \|x\|=\|y\|=1
+\]
+时必有
+\[
+\|x+y\|\le 2-\delta,
+\]
+称 $(X,\|\cdot\|)$ 是\emph{一致凸}的。证明：
+\begin{enumerate}
+  \item $C[a,b]$ 不是一致凸的；
+  \item $L^1[a,b]$ 不是一致凸的；
+  \item 一致凸赋范空间必是严格凸的。
+\end{enumerate}
+\end{homework}
+\section{第三章习题}
+\begin{homework}[3.1]
+设 $\sup_{n\ge1}|a_n|<\infty$，在 $l^{1}$ 上定义算子 $T:y=Tx$，其中
+\[
+x=\{\xi_n\},\quad y=\{\eta_n\},\quad \eta_k = a_k \xi_k\ (k=1,2,\dots).
+\]
+证明：$T$ 是 $l^{1}$ 上的有界线性算子，并且
+\[
+\|T\| = \sup_{n\ge1}|a_n|.
+\]
+\end{homework}
+
+\begin{homework}[3.2]
+设 $e_1=(1,0,\dots,0),\ e_2=(0,1,0,\dots,0),\dots,\ e_n=(0,0,\dots,0,1)$ 是 $\mathbb{R}^n$ 的基。
+对于 $x\in\mathbb{R}^n$，$x=(\xi_1,\dots,\xi_n)$，如果在 $\mathbb{R}^n$ 上定义范数为：
+
+\begin{enumerate}
+  \item $\displaystyle \|x\|=\sup_{1\le k\le n}|\xi_k|$；
+  \item $\displaystyle \|x\|=\sum_{k=1}^n |\xi_k|$，
+\end{enumerate}
+
+试分别求出 $(\mathbb{R}^n)'$ 的范数。
+\end{homework}
+
+\begin{homework}[3.3]
+证明 Banach 空间 $X$ 是自反的，当且仅当 $X'$ 是自反的。
+\end{homework}
+
+\begin{homework}[3.4]
+设 $X$ 是 Banach 空间，证明：如果 $X'$ 是可分的，则 $X$ 也是可分的。
+\end{homework}
+
+\begin{homework}[3.5]
+证明空间 $L^{1}[a,b]$ 及 $l^{1}$ 不是自反的。
+\end{homework}
+\begin{homework}[3.6]
+设 $\{x_n\}\subset L^{p}[a,b]\,(1<p<\infty)$。证明：对于每一个 $y\in L^{q}[a,b]\Bigl(\dfrac{1}{p}+\dfrac{1}{q}=1\Bigr)$，
+\[
+\int_a^b x_n(t)y(t)\,dt \longrightarrow 0\quad(n\to\infty),
+\]
+当且仅当 $\sup_n \|x_n\|<\infty$，并且对于每一个可测子集 $E\subset[a,b]$，
+\[
+\int_E x_n(t)\,dt \longrightarrow 0\quad(n\to\infty).
+\]
+\end{homework}
+
+\begin{homework}[3.7]
+设 $X$ 是 Banach 空间，$p(x)$ 是 $X$ 上的泛函，满足：
+\begin{enumerate}
+  \item $p(x)\ge0$；
+  \item 当 $a\ge0$ 时，$p(ax)=ap(x)$；
+  \item $p(x+y)\le p(x)+p(y)$；
+\end{enumerate}
+并且当 $x,x_n\in X,\ x_n\to x\ (n\to\infty)$ 时，有
+\[
+\liminf_{n\to\infty} p(x_n) \ge p(x).
+\]
+证明：存在常数 $M$，使得
+\[
+p(x)\le M\|x\|\qquad (x\in X).
+\]
+\end{homework}
+
+\begin{homework}[3.8]
+设 $\{x_k\}$ 是 Banach 空间 $X$ 中的点列。证明：如果对每一个 $f\in X'$，
+\[
+\sum_{k=1}^{\infty}|f(x_k)|<\infty,
+\]
+则存在常数 $M$，使得对每一个 $f\in X'$，
+\[
+\sum_{k=1}^{\infty}|f(x_k)|\le M\|f\|.
+\]
+\end{homework}
+
+\begin{homework}[3.9]
+试应用习题第 15 题的结果证明 Banach--Steinhaus 定理。
+\end{homework}
+
+\begin{homework}[3.10]
+设 $X$ 是 Banach 空间，$A,B$ 是 $X$ 的闭子空间，且 $X=A+B$。证明：存在常数 $M$，使得每一个
+$x\in X$ 有表示 $x=a+b$，其中 $a\in A,b\in B$，并且
+\[
+\|a\|+\|b\|\le M\|x\|.
+\]
+\end{homework}
+
+\begin{homework}[3.11]
+设 $X,Y$ 是 Banach 空间，$T:X\to Y$ 是线性算子，并且对任意 $x_n\in X$，当 $x_n\to 0\ (n\to\infty)$ 时，
+对每一个 $f\in Y'$，都有
+\[
+f(Tx_n)\longrightarrow 0\qquad(n\to\infty).
+\]
+证明 $T$ 是连续的。
+\end{homework}
+\begin{homework}[3.12]
+设 Banach 空间 $X$ 具有 Schauder 基 $\{e_k\}$。对于每一个 $x\in X$，写作
+\[
+x=\sum_{k=1}^{\infty}\alpha_k e_k,
+\]
+令
+\[
+f_n(x)=\alpha_n\qquad (n=1,2,\dots).
+\]
+证明每一个 $f_n$ 是 $X$ 上的有界线性泛函（提示：利用习题二第 15 题的结果）。
+\end{homework}
+
+\begin{homework}[3.13]
+设 $X$ 是赋范空间，$f$ 是 $X$ 上的线性泛函。证明：$f$ 是有界的，当且仅当 $f$ 的零空间
+\[
+M(f)=\{x\in X: f(x)=0\}
+\]
+是闭子空间。
+\end{homework}
+
+\begin{homework}[3.14]
+证明：如果赋范空间中的一个有界线性泛函的保范延拓不惟一，则所有保范延拓的势不小于连续统的势。
+\end{homework}
+
+\begin{homework}[3.15]
+设 $G$ 是赋范空间 $X$ 的子空间，$x_0\in X$。证明：
+\[
+x_0\in\overline{G}
+\quad\Longleftrightarrow\quad
+\text{对于 $X$ 上任一满足 } f(x)=0\ (x\in G)\ \text{的有界线性泛函 $f$，都有 } f(x_0)=0.
+\]
+\end{homework}
+\begin{homework}[3.16]
+设 $X$ 是赋范空间，$x_k\in X\ (k=1,\dots,n)$，$a_1,a_2,\dots,a_n$ 是一组数并且满足条件：存在常数 $M$，使得对任意
+$t_1,t_2,\dots,t_n$，
+\[
+\Bigl|\sum_{k=1}^n t_k a_k\Bigr|
+   \le M\Bigl\|\sum_{k=1}^n t_k x_k\Bigr\|.
+\]
+证明：存在 $X$ 上的线性泛函 $f$，使得  
+\begin{enumerate}
+  \item $f(x_k)=a_k\quad (k=1,2,\dots,n)$；
+  \item $\|f\|\le M$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[3.17]
+设 $(X,\|\cdot\|)$ 是可分的赋范空间。证明：存在可数子集 $\Phi\subset X'$，使得对于每一个 $x\in X$，
+\[
+\|x\|=\sup_{f\in\Phi}|f(x)|.
+\]
+\end{homework}
+
+\begin{homework}[3.18]
+设 $X$ 是赋范空间，$x_0,x_n\in X\ (n=1,2,\dots)$。证明：若
+\[
+x_n \xrightarrow{w} x_0\quad (n\to\infty),
+\]
+则存在由 $\{x_n\}$ 的有限线性组合构成的一个序列，在范数意义下收敛到 $x_0$。
+（即存在序列 $y_m=\sum_{k=1}^{N_m}\alpha_{m,k}x_{n_{m,k}}$ 使得 $y_m\to x_0$。）
+\end{homework}
+
+\begin{homework}[3.19]
+设 $M$ 是赋范空间 $X$ 的闭子空间，$x_0\in X$ 是 $M$ 中某个点列在弱拓扑下的极限。证明 $x_0\in M$。
+\end{homework}
+
+\begin{homework}[3.20]
+设 $X$ 是一致凸赋范空间（参看习题二第 18 题），$x_0,x_n\in X\ (n=1,2,\dots)$。证明：如果
+\[
+x_n \xrightarrow{w} x_0\quad (n\to\infty)
+\quad\text{且}\quad
+\|x_n\|\longrightarrow\|x_0\|\quad (n\to\infty),
+\]
+则
+\[
+x_n\longrightarrow x_0\quad (n\to\infty).
+\]
+\end{homework}
+
+\begin{homework}[3.21]
+（\textbf{Banach 极限}）设 $c$ 为所有收敛数列的空间。对于 $x=\{\xi_k\}\in c$，定义
+\[
+F_0(x)=\lim_{k\to\infty}\xi_k.
+\]
+证明：
+\begin{enumerate}
+  \item $F_0$ 是空间 $c$ 上的线性泛函；
+  \item 在空间 $l^\infty$ 上存在线性泛函 $F$，使得 $F$ 是 $F_0$ 的延拓，并且对每个
+  $x=\{\eta_n\}\in l^\infty$，
+  \[
+    \liminf_{n\to\infty} \eta_n
+      \;\le\; F(x)
+      \;\le\; \limsup_{n\to\infty} \eta_n.
+  \]
+\end{enumerate}
+（称 $F(x)$ 为序列 $x=\{\eta_n\}\in l^\infty$ 的 \emph{Banach 极限}。）
+\end{homework}
+\begin{homework}[3.22]
+证明空间 $l^p(1<p<\infty)$ 上的有界线性泛函的一般形式为
+\[
+f(x)=\sum_{k=1}^\infty a_k \xi_k \qquad (x=\{\xi_k\}\in l^p),
+\]
+其中 $y=\{\alpha_k\}\in l^q \ ( \tfrac1p+\tfrac1q=1 )$ 且
+\[
+\|f\|=\Bigl( \sum_{k=1}^\infty |\alpha_k|^q \Bigr)^{1/q}, 
+\qquad (l^p)'=l^q .
+\end{homework}
+
+\begin{homework}[3.23]
+证明 $(c_0)'=l^1$。
+\end{homework}
+
+\begin{homework}[3.24]
+（级数的广义求和问题）设有数项级数
+\[
+a_1+a_2+\cdots+a_n+\cdots
+\]
+及 $\{S_n\}$ 是其部分和序列，给定无穷矩阵
+\[
+\left(
+\begin{array}{cccc}
+\alpha_{11} & \alpha_{12} & \cdots & \alpha_{1k} \\
+\alpha_{21} & \alpha_{22} & \cdots & \alpha_{2k} \\
+\vdots      & \vdots      &        & \vdots      \\
+\alpha_{n1} & \alpha_{n2} & \cdots & \alpha_{nk} \\
+\vdots      & \vdots      &        & \vdots
+\end{array}
+\right)
+\tag{2}
+\]
+设
+\[
+\sigma_n=\sum_{k=1}^\infty \alpha_{nk} S_k \qquad (n=1,2,\cdots)
+\]
+且假定其右边的所有级数都收敛；如果 $n\to\infty$ 时 $\{\sigma_n\}$ 有极限，称级数 (1) 关于矩阵 (2) 可广义求和，并且称 
+\[
+\sigma=\lim_{n\to\infty}\sigma_n
+\]
+为级数 (1) 的广义和。
+
+证明：由矩阵 (2) 给出的广义求和法，对于每一个按通常意义收敛的级数 (1) 也按由矩阵 (2) 决定的广义求和法可求和，并且广义和等于通常意义下的和，当且仅当以下三个条件成立：
+
+1) \(\displaystyle \lim_{n\to\infty} \alpha_{nk}=0 \quad (k=1,2,\cdots)\);
+
+2) \(\displaystyle \lim_{n\to\infty} \sum_{k=1}^\infty \alpha_{nk}=1\);
+
+3) \(\displaystyle \sum_{k=1}^\infty |\alpha_{nk}| \le M \qquad (n=1,2,\cdots).\)
+\end{homework}
+\begin{homework}[3.25]
+设 $X$ 是 Banach 空间，$T\in\mathcal{B}(X)$，记  
+\[
+\mathcal{N}(T)=\{x\in X:Tx=0\},\qquad 
+\mathcal{R}(T)=\{y\in X:T x=y,\ x\in X\},
+\]
+\[
+\mathcal{N}(T)^\perp=\{f\in X': f(x)=0,\ x\in\mathcal{N}(T)\},\qquad
+\mathcal{R}(T)^\perp=\{f\in X': f(x)=0,\ x\in\mathcal{R}(T)\}.
+\]
+证明：
+\begin{itemize}
+    \item[(1)] $\mathcal{R}(T)^\perp=\mathcal{N}(T^*)$；
+    \item[(2)] 当 $X$ 自反时，$\mathcal{N}(T)^\perp=\mathcal{R}(T^*)$。
+\end{itemize}
+\end{homework}
+
+\begin{homework}[3.26]
+（平均遍历定理）设 $X$ 是自反 Banach 空间，$V\in\mathcal{B}(X)$ 且存在常数 $K$，使得  
+\[
+\|V^n\|\le K \qquad (n=1,2,\ldots),
+\]
+令  
+\[
+T_n=\frac1n(I+V+V^2+\cdots+V^{\,n-1}).
+\]
+证明：
+\begin{itemize}
+    \item[(1)] $\{T_n\}$ 在 $\mathcal{N}(I-V)\oplus \mathcal{R}(I-V)$ 上强收敛于某线性算子 $P$，且 $P^2=P$ 且 $\|P\|\le K$；
+    \item[(2)] $X=\mathcal{N}(I-V)\oplus \mathcal{R}(I-V)$，从而 $\{T_n\}$ 在 $X$ 上强收敛于 $P$。
+\end{itemize}
+\end{homework}
+
+\begin{homework}[3.27]
+设无穷矩阵 $(a_{ij})$ 满足  
+\[
+\sum_{i=1}^\infty\sum_{j=1}^\infty |a_{ij}|^2<\infty.
+\]
+定义算子 $T:\ell^2\to \ell^2$，$y=Tx$，其中  
+\[
+x=\{\xi_k\},\qquad y=\{\eta_n\},\qquad 
+\eta_n=\sum_{k=1}^\infty a_{nk}\,\xi_k\quad (n=1,2,\ldots).
+\]
+证明 $T$ 是紧算子。
+\end{homework}
+
+\begin{homework}[3.28]
+设 $\{T_n\}$ 是 Banach 空间 $X$ 上的紧算子列并且强收敛于线性算子 $T$。试举例说明 $T$ 不必是紧算子。
+\end{homework}

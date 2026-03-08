@@ -1,0 +1,592 @@
+\chapter{赋范线性空间}
+\section{ 赋范空间的基本概念
+}
+\begin{definition}[线性空间]
+设 $X$ 是一个非空集合，$k$ 是复数域（或实数域）。
+若在 $X$ 上定义了两种运算：
+
+\begin{enumerate}
+  \item[\textbf{(1)}] \textbf{加法运算}：对任意 $x,y \in X$，存在唯一的 $u \in X$，记作 $u = x + y$，并满足：
+  \begin{enumerate}
+    \item $x + y = y + x$；\hfill（交换律）
+    \item $(x + y) + z = x + (y + z)$；\hfill（结合律）
+    \item 存在唯一的 $\theta \in X$，使对任意 $x \in X$，有 $x + \theta = x$。\hfill（$\theta$ 称为 $X$ 的\textbf{零向量}）
+    \item 对任意 $x \in X$，存在加法逆元 $-x$，使 $x + (-x) = \theta$。\hfill（存在逆元）
+  \end{enumerate}
+
+  \item[\textbf{(2)}] \textbf{数乘运算}：对任意标量 $\alpha,\beta \in k$ 及 $x,y \in X$，定义 $\alpha x \in X$，并满足：
+  \begin{enumerate}
+    \item $\alpha(x+y) = \alpha x + \alpha y$；
+    \item $(\alpha + \beta)x = \alpha x + \beta x$；
+    \item $(\alpha\beta)x = \alpha(\beta x)$；
+    \item $1 \cdot x = x$，其中 $1$ 为 $k$ 中的单位元。
+  \end{enumerate}
+\end{enumerate}
+
+若以上两种运算均满足上述性质，则称 $X$ 为数域 $k$ 上的\textbf{线性空间}（或称\textbf{向量空间}）。
+\end{definition}
+\begin{remark}
+    一般地，实（或复）线性空间简称为线性空间.线性空间中的元素又称为向量，\\上述加法及数乘运算统称为线性运算. 
+在赋范线性空间 $(X, \|\cdot\|)$ 中：
+
+\begin{enumerate}
+  \item 若向量 $x \in X$ 满足 $\|x\| = 1$，称 $x$ 为一个\textbf{单位向量}；
+  \item 以原点为中心的\textbf{单位球}定义为
+  \[
+  B(0,1) = \{\, x \in X : \|x\| < 1 \,\}.
+  \]
+\end{enumerate}
+\end{remark}
+\begin{note}
+设 $(X,\|\cdot\|)$ 是一个线性赋范空间。  
+对任意 $x,y \in X$，定义
+\[
+d(x,y) = \|x - y\|.
+\]
+则 $(X,d)$ 是一个距离空间，称此距离为由范数诱导的距离。
+
+\begin{itemize}
+  \item 线性赋范空间中的距离均指由范数诱导的距离；
+  \item 在赋范空间中，点列 $\{x_n\}_{n=1}^\infty$ 收敛于 $x$ 当且仅当
+  \[
+  \|x_n - x\| \to 0 \quad (n \to \infty).
+  \]
+  此时称 $\{x_n\}$ \textbf{依范数（或强）收敛}于 $x$。
+\end{itemize}
+\end{note}
+\begin{theorem}[赋范空间中范数与线性运算的连续性]
+设 $(X,\|\cdot\|)$ 是一个赋范空间，则有：
+
+\begin{enumerate}
+  \item[\textbf{(1)}] \textbf{范数是连续函数}：  
+  若 $\{x_n\}$ 为 $X$ 中的点列，且 $x_n \to x$（即 $\|x_n - x\| \to 0$，表示 $x_n$ 依范数收敛于 $x$），  
+  则有
+  \[
+  \|x_n\| \to \|x\| \quad (n \to \infty).
+  \]
+  也就是说：\textit{范数映射 $\|\cdot\|:X\to\mathbb{R}$ 是连续的。}
+
+  \item[\textbf{(2)}] \textbf{线性运算是连续的}：
+  \begin{enumerate}
+    \item 当 $x_n \to x$ 且 $y_n \to y$（即 $\|x_n-x\|\to0,\ \|y_n-y\|\to0$）时，
+    \[
+    x_n + y_n \to x + y \quad (n \to \infty);
+    \]
+    即\textit{加法运算 $+:X\times X\to X$ 是连续的。}
+    \item 当 $x_n \to x$ 且 $a_n \to a$（其中 $a_n,a\in k$，$k$ 为实数域或复数域）时，
+    \[
+    a_n x_n \to a x \quad (n \to \infty);
+    \]
+    即\textit{数乘运算 $(a,x)\mapsto a x$ 是连续的。}
+  \end{enumerate}
+\end{enumerate}
+\end{theorem}
+\begin{definition}[Banach 空间中的级数收敛判别]
+设 $(X, \|\cdot\|)$ 是一个赋范空间。若级数
+$
+\sum_{k=1}^{\infty} \|x_k\| $
+收敛，则级数
+$
+\sum_{k=1}^{\infty} x_k $
+也收敛，且有不等式
+\[
+\left\| \sum_{k=1}^{\infty} x_k \right\|
+\le \sum_{k=1}^{\infty} \|x_k\|.
+\]
+
+\textbf{反之}，若在一个赋范空间中，任意无穷级数
+\[
+\sum_{k=1}^{\infty} \|x_k\|
+\]
+收敛都能推出其相应的向量级数
+\[
+\sum_{k=1}^{\infty} x_k
+\]
+收敛，则该赋范空间是一个 Banach 空间。
+\end{definition}
+\begin{remark}
+Banach 空间是一个完备的赋范空间，即在该空间中每个柯西列都收敛于空间内的某个极限。
+\end{remark}
+\section{凸集}
+\begin{definition}[凸集]
+设 $A$ 是线性空间 $X$ 中的一个集合，若对任意 $x,y\in A$ 有
+\[
+\{\,a x + (1-a)y \mid 0\le a\le 1\,\} \subset A,
+\]
+则称 $A$ 是一个\textcolor{red}{凸集}。
+\end{definition}
+\begin{remark}
+  \begin{itemize}
+  \item $a x + (1-a)y$ 表示连接 $x$ 和 $y$ 的线段上任意一点；
+  \item 参数 $a \in [0,1]$ 控制点在这条线段上的“位置”。
+  \item 凸集的交集还是凸集，但是并集无法保障并玩还是凸集
+\end{itemize}
+\end{remark}
+\begin{definition}[凸包包含集合的最小凸集——类似闭包]
+设 $X$ 为线性空间，$A\subset X$。$A$ 的凸包定义为
+\[
+\operatorname{co}(A)
+:= \bigcap\{\,E \subset X \mid A\subset E,\ E \text{ 为凸集}\,\}.
+\]
+\end{definition}
+
+\begin{proposition}[等价刻画-方便取点任意有限个点任意凸组合]
+设 $A\subset X$。则
+\[
+\operatorname{co}(A)
+= \left\{ \sum_{k=1}^n a_k x_k \;\middle|\;
+n\in\mathbb{N},\ x_k\in A,\ a_k\ge 0,\ \sum_{k=1}^n a_k=1 \right\},
+\]
+并且它是包含 $A$ 的最小凸集：若 $C$ 为凸集且 $A\subset C$，则
+\(\operatorname{co}(A)\subset C\)。
+\end{proposition}
+
+\begin{itemize}
+  \item $\operatorname{Co}(A)$ 是包含 $A$ 的最小凸集；
+  \item $\operatorname{Co}(A)$ 是 $A$ 中元素所有凸组合的全体。
+\end{itemize}
+\begin{example}
+设 $(X,\|\cdot\|)$ 是赋范空间，定义
+\[
+B(0,1)=\{\,x\in X:\|x\|<1\,\},
+\]
+即以原点为中心、半径为 $1$ 的单位球。
+
+显然 $B(0,1)$ 是原点的有界邻域。对任意 $x,y\in B(0,1)$ 及任意满足 $0<\alpha<1$ 的实数 $\alpha$，有
+\[
+\|\,\alpha x+(1-\alpha)y\,\|
+\le \alpha\|x\|+(1-\alpha)\|y\|
+< \alpha+(1-\alpha)=1.
+\]
+因此，$B(0,1)$ 是一个凸集。
+\end{example}
+\begin{example}
+对任意 $x=(x_1,x_2,\dots,x_n)\in\mathbb{R}^n$（或 $\mathbb{C}^n$），定义
+\[
+\|x\|=\left[\sum_{i=1}^{n}|x_i|^2\right]^{1/2},
+\]
+则 $\mathbb{R}^n$（或 $\mathbb{C}^n$）是一个实（或复）可分的 Banach 空间。
+
+在 $\mathbb{R}^n$（或 $\mathbb{C}^n$）上，范数还可以定义如下：
+\[
+\|x\|_1 = \max_{1\le i\le n}|x_i|,\qquad
+\|x\|_2 = \sum_{i=1}^{n}|x_i|.
+\]
+\end{example}
+\begin{dxtips}[距离空间和赋范空间关系]
+赋范空间是带有线性结构的特殊距离空间；\\[3pt]
+若距离空间满足\textbf{齐次性}（即 $d(\lambda x,\lambda y)=|\lambda|\,d(x,y)$），
+则它可以诱导出一个范数，从而成为赋范空间。
+\end{dxtips}
+\begin{example}
+空间 $C[a,b]$ 按
+\[
+\|x\| = \max_{t\in[a,b]}|x(t)|
+\]
+形成一个可分的 Banach 空间。
+\end{example}
+
+\begin{example}
+空间 $l^{\infty}$ 按
+\[
+\|x\|_{\infty} = \sup_{n\in\mathbb{N}}|x_n|
+\]
+构成不可分的 Banach 空间。
+\end{example}
+
+\begin{example}
+空间 $V[a,b]$：区间 $[a,b]$ 上的有界变差函数全体。设 $x\in V[a,b]$，$V_a^b(x)$ 表示函数 $x$ 在 $[a,b]$ 上的全变差。$V[a,b]$ 按
+\[
+\|x\| = |x(a)| + V_a^b(x)
+\]
+形成 Banach 空间。先证明是范数
+\end{example}
+\begin{dxtips}
+    不同范数在点列收敛性相同
+\end{dxtips}
+\begin{definition}[有界变差函数]
+设 $f(x)$ 是区间 $[a,b]$ 上的有界函数。  
+对 $[a,b]$ 的任意分划
+\[
+\Delta: a = t_0 < t_1 < \cdots < t_n = b,
+\]
+定义
+\[
+V(\Delta,f) = \sum_{i=1}^{n} \big| f(t_i) - f(t_{i-1}) \big|
+\]
+为 $f(x)$ 关于分划 $\Delta$ 的变差。若函数 $f$ 在 $[a,b]$ 上的全变差
+\[
+V_a^b(f) = \sup_{\Delta} \sum_{i=1}^{n} \big| f(t_i) - f(t_{i-1}) \big|
+\]
+有限，则称 $f(x)$ 为区间 $[a,b]$ 上的\textbf{有界变差函数}。
+\end{definition}
+\begin{remark}
+所有有界变差函数构成的空间 $V[a,b]$，按范数
+\[
+\|f\| = |f(a)| + V_a^b(f)
+\]
+是一个 Banach 空间。
+
+其中，全变差 $V_a^b(f)$ 的定义是对所有区间划分 $\Delta: a=t_0<t_1<\cdots<t_n=b$，
+计算相邻点函数值之差的绝对值和：
+\[
+V(\Delta,f) = \sum_{i=1}^{n} |f(t_i) - f(t_{i-1})|,
+\]
+再取所有划分中该和的最大值（即上确界）：
+\[
+V_a^b(f) = \sup_{\Delta} V(\Delta,f).
+\]
+\begin{dxtips}
+    
+
+\begin{itemize}
+\item 如果小范围内剧烈振动就没法有界了
+  \item “有界”保证范数 $\|f\|$ 的有限性；
+  \item “变差”项 $V_a^b(f)$ 体现了函数在区间上的总波动量，并保证该空间对极限封闭，从而具备完备性。
+\end{itemize}
+\end{dxtips}
+\end{remark}
+\begin{example}
+设 $C[a,b]$ 为区间 $[a,b]$ 上的连续函数全体，按
+\[
+\|x\| = \max_{t \in [a,b]} |x(t)|
+\]
+定义范数，则 $C[a,b]$ 形成一个可分的 Banach 空间。
+\end{example}
+
+\begin{example}
+设 $[a,b]$ 区间上的连续函数全体按通常方式定义线性运算形成线性空间，按
+\[
+\|x\|_1 = \int_a^b |x(t)|\,dt,
+\]
+定义范数，则该空间构成线性赋范空间，但不是 Banach 空间。
+\end{example}
+\section{$L^p$:p次可积函数空间”}。
+\begin{lemma}[赫尔德（Hölder）不等式]\label{lem:holder}
+设 $p,q\in(1,\infty)$，且满足
+\[
+\frac{1}{p}+\frac{1}{q}=1,
+\]
+$E$ 是可测集，$x(t),y(t)$ 是 $E$ 上的可测函数，则有
+\[
+\int_E |x(t)y(t)|\,dt
+\le
+\left(\int_E |x(t)|^p\,dt\right)^{\!1/p}
+\left(\int_E |y(t)|^q\,dt\right)^{\!1/q}.
+\]
+\end{lemma}
+
+\begin{lemma}[闵可夫斯基（Minkowski）不等式]\label{lem:minkowski}
+设 $1\le p<\infty$，$E$ 是可测集，$x(t),y(t)$ 是 $E$ 上的可测函数，则有不等式
+\[
+\left(\int_E |x(t)+y(t)|^p\,dt\right)^{\!1/p}
+\le
+\left(\int_E |x(t)|^p\,dt\right)^{\!1/p}
++\left(\int_E |y(t)|^p\,dt\right)^{\!1/p}.
+\]
+\end{lemma}
+\begin{definition}[空间 $L^p(E)$-p次可积空间]
+设 $1 \le p < \infty$，$E$ 是可测集，$x(t)$ 是 $E$ 上的可测函数。若 $|x(t)|^p$ 在 $E$ 上可积，则称 $x(t)$ 是 $E$ 上 $p$ 次可积函数，用 $L^p(E)$ 表示所有 $E$ 上 $p$ 次可积函数的全体，并称其为 $L^p(E)$ 空间。其中两个几乎处处相等的函数看作是同一个元素。
+
+对于任意 $x \in L^p(E)$，$x$ 的 $L^p$ 范数定义为
+\[
+\|x\|_p = \left( \int_E |x(t)|^p \, dt \right)^{1/p}.
+\]
+\end{definition}
+\begin{theorem}\label{thm:banach}
+$L^p(E)\,(p\ge1)$ 是 Banach 空间。
+\end{theorem}
+Branch空间就是，如果级数的$||x_k||$收敛则级数收敛而且又不等式，级数的范数小于，范数的级数
+\begin{theorem}\label{thm:separable}
+$L^p(E)\,(p\ge1)$ 是可分空间。
+\end{theorem}
+
+\begin{definition}[点列收敛]
+在 $L^p(E)\,(p\ge1)$ 中，如果函数列 $\{x_n\}$ 按范数收敛于 $x$，即
+\[
+\int_E |x_n(t)-x(t)|^p\,dt \to 0 \quad (n\to\infty),
+\]
+则称函数列 $\{x_n\}$ 在 $E$ 上 $p$ 次幂平均收敛于函数 $x(t)$。
+\end{definition}
+\begin{definition}[空间 $L^{\infty}(E)$-本质有界可测函数空间]
+设 $E$ 是可测集，$x(t)$ 是 $E$ 上的可测函数。  
+如果存在可测子集 $E_0 \subset E$，使得 $mE_0 = 0$ 且 $x(t)$ 在 $E \setminus E_0$ 上是有界的，  
+则称 $x(t)$ 在 $E$ 上是本质有界的。  
+
+用 $L^{\infty}(E)$ 表示 $E$ 上本质有界可测函数的全体，并称其为 $L^{\infty}(E)$ 空间。  
+同样地，在 $L^{\infty}(E)$ 中，两个几乎处处相等的函数看作是同一个元素。
+\end{definition}
+本质有界函数就是：去掉一个测度为零的集合后，它就变成有界的，干掉测度为零的坏点们。
+\begin{definition}[$L^{\infty}$ 范数与本质上确界]
+对于任意 $x \in L^{\infty}(E)$，称
+\[
+\|x\|_{\infty}
+= \inf_{\substack{E_0 \subset E \\ m(E_0)=0}}
+\;\sup_{t \in E \setminus E_0} |x(t)|
+\]
+为 $x$ 的 $L^{\infty}$ 范数。我们常用
+\[
+\|x\|_{\infty} = \operatorname*{ess\,sup}_{t\in E} |x(t)|
+\]
+表示等式右端，并称之为 $|x(t)|$ 在 $E$ 上的 \textbf{本性（本质）上确界}。
+
+此外，$L^{\infty}(E)$ 是一个 \textbf{不可分的 Banach 空间}。
+\end{definition}
+范数定义成去掉零测集以后函数的上确界。
+\begin{remark}
+\begin{itemize}
+  \item 在 $L^p(E)\,(1 \le p < \infty)$ 中，若函数列 $\{x_n(t)\}$ 在 $E$ 上 $p$ 次幂平均收敛于函数 $x(t)$，则 $\{x_n(t)\}$ 在 $E$ 上依测度收敛于 $x(t)$；反之不一定成立。
+  \item 若 $1 \le p_2 \le p_1 < \infty$，且 $mE < \infty$，则有
+  \[
+  L^{\infty}(E) \subset L^{p_1}(E) \subset L^{p_2}(E).
+  \]
+\end{itemize}
+\end{remark}
+\begin{proposition}[两种范数对比]
+\begin{itemize}
+  \item 设 $1 \le p < \infty$，若 $x_n \in \mathbb{R}$（或 $\mathbb{C}$），$n=1,2,\ldots$，定义
+  \[
+  l^p = \left\{ x = (x_1,x_2,\ldots)\;\middle|\;\sum_{n=1}^{\infty}|x_n|^p < +\infty \right\},
+  \]
+  称为 $l^p$ 空间。对于 $l^p$ 空间中的元素 $x$，其 $l^p$ 范数为
+  \[
+  \|x\|_p = \left(\sum_{n=1}^{\infty}|x_n|^p\right)^{1/p}.
+  \]
+
+  \item 若 $x_n \in \mathbb{R}$（或 $\mathbb{C}$），$n=1,2,\ldots$，定义
+  \[
+  l^{\infty} = \left\{ x = (x_1,x_2,\ldots)\;\middle|\;\sup_{1\le n<\infty}|x_n| < +\infty \right\},
+  \]
+  称为 $l^{\infty}$ 空间。对于 $l^{\infty}$ 空间中的元素 $x$，其 $l^{\infty}$ 范数为
+  \[
+  \|x\|_{\infty} = \sup_{1\le n<\infty}|x_n|.
+  \]
+\end{itemize}
+\end{proposition}
+\section{赋范空间进一步性质}
+\begin{definition}[赋范空间的子空间]
+设 $(X,\|\cdot\|)$ 是赋范空间，$X_1$ 是 $X$ 的线性子空间。  
+如果在 $X_1$ 中取原来 $X$ 上的范数，那么 $(X_1,\|\cdot\|)$ 也是赋范空间，称其为 $(X,\|\cdot\|)$ 的赋范子空间。
+
+\begin{itemize}
+  \item 赋范线性空间的完备子空间是闭子空间；
+  \item Banach 空间的闭子空间是 Banach 空间。
+\end{itemize}
+\end{definition}
+\begin{theorem}[赋范空间的完备化]
+设 \((X,\|\cdot\|)\) 是赋范空间。则存在一个 Banach 空间 \(\widetilde{X}\)，称为 \(X\) 的完备化，满足：
+
+\begin{enumerate}
+  \item \(\widetilde{X}\) 是距离空间 \(X\) 的完备化；
+  \item 在 \(\widetilde{X}\) 中可定义线性运算与范数，使其成为线性赋范空间。  
+  若 \(\tilde{x},\tilde{y}\in\widetilde{X}\)，其中
+  \[
+  \tilde{x}=\{x_n\},\qquad \tilde{y}=\{y_n\},
+  \]
+  且 \(\{x_n\},\{y_n\}\) 为 \(X\) 中的 Cauchy 列，则定义
+  \[
+  \tilde{x}+\tilde{y}=\{x_n+y_n\},\qquad
+  a\tilde{x}=\{a x_n\},\qquad
+  \|\tilde{x}\|_1=\lim_{n\to\infty}\|x_n\|;
+  \]
+  \item \(\widetilde{X}\) 是 Banach 空间，且 \(X\) 与 \(\widetilde{X}\) 的一个稠密子空间等距同构。
+\end{enumerate}
+\end{theorem}
+\begin{definition}[商空间]
+设 \(X\) 是数域 \(k\)（实或复数域）上的一个线性空间，\(M\) 是 \(X\) 的一个线性子空间。  
+对任意 \(x_1,x_2\in X\)，若 \(x_1 - x_2 \in M\)，则称 \(x_1\) 与 \(x_2\) 属于同一个\textbf{等价类}。
+
+把一个等价类看作一个新的向量，这种向量的全体组成的集合记作
+\[
+X/M,
+\]
+称为 \(X\) 关于 \(M\) 的\textbf{商空间}。
+
+
+\end{definition}
+此外：
+\begin{itemize}
+  \item 对 \(x\in X\)，记其所在的等价类为 \(x+M\)；
+  \item 对任意 \(x,y\in X\)，有
+  \[
+  x=y \iff x-y\in M;
+  \]
+  \item 若 \(z\in M\)，则 \(z=0=M\)。
+\end{itemize}
+我们以前就用过商空间设
+\[
+X=\left\{x(t)\,\middle|\,x(t)\text{ 是 }E\text{ 上可测函数，且 }\int_E|x(t)|^pdt<\infty\right\};
+\]
+\[
+M=\left\{x(t)\,\middle|\,x(t)\text{ 是 }E\text{ 上可测函数，}x(t)=0\text{ a.e.}\right\}.
+\]
+则
+\[
+L^p(E)=X/M.
+\]
+\\
+设 \(X\) 是一个线性空间，\(M\) 是 \(X\) 的一个线性子空间，则商空间 \(X/M\) 也是线性空间，其上的线性运算定义如下：
+\[
+\tilde{x}+\tilde{y}=\widetilde{x+y},\qquad a\tilde{x}=\widetilde{a x}.
+\]
+、
+
+\begin{theorem}
+设 \(X\) 是一个线性赋范空间，\(M\) 是 \(X\) 的一个闭线性子空间，则商空间 \(X/M\) 上可以定义范数
+\[
+\|\tilde{x}\|=\inf_{y\in M}\|x+y\|,
+\]
+此时称 \(X/M\) 为赋范商空间。当 \(X\) 是 Banach 空间时，赋范商空间 \(X/M\) 也是一个 Banach 空间。
+\end{theorem}
+\begin{definition}[赋范空间的乘积]
+设 \((X_1,\|\cdot\|_1)\)、\((X_2,\|\cdot\|_2)\) 是赋范空间。  
+在 \(X_1\times X_2\) 中定义线性运算与范数如下：
+
+对任意
+\[
+x=(x_1,x_2),\quad y=(y_1,y_2),\quad a\in K,
+\]
+有
+\[
+x+y=(x_1+y_1,x_2+y_2),\qquad
+a x=(a x_1,a x_2),\qquad
+\|x\|=\|x_1\|_1+\|x_2\|_2。
+\]
+
+若 \(X_1,X_2\) 均为 Banach 空间，则 \(X_1\times X_2\) 也是 Banach 空间。
+\end{definition}
+\begin{definition}[Hamel（哈默尔）基---有限个向量组和]
+若 \(\{x_\alpha\mid \alpha\in\Lambda\}\) 是 \(X\) 的线性无关子集，且
+\[
+\operatorname{span}\{x_\alpha\mid \alpha\in\Lambda\}=X,
+\]
+则称 \(\{x_\alpha\mid \alpha\in\Lambda\}\) 为 \(X\) 的 \textbf{Hamel 基}。
+
+\begin{itemize}
+  \item 每个线性空间都有 Hamel 基；
+  \item 若 \(\{x_\alpha\mid \alpha\in\Lambda\}\) 是 \(X\) 的 Hamel 基，
+  则每个 \(x\in X\) 可唯一地表示为其中有限个向量的线性组合。
+\end{itemize}
+\end{definition}
+\begin{note}
+    Hamel 基就是“能唯一线性表示所有向量”的最小生成集。  
+在有限维空间中，Hamel 基就是我们熟悉的“标准基”。  
+例如在 \(\mathbb{R}^3\) 中，
+\[
+(1,0,0),\ (0,1,0),\ (0,0,1)
+\]
+就是 Hamel 基。  
+
+所有由集合 \(\{x_\alpha \mid \alpha \in \Lambda\}\) 线性组合得到的向量，恰好构成整个空间 \(X\)：
+\[
+\operatorname{span}\{x_\alpha \mid \alpha \in \Lambda\}=X。
+\]
+\end{note}
+\begin{example}[有限维线性空间的 Hamel 基]
+在线性空间 \(\mathbb{R}^2\) 中，取
+\[
+e_1=(1,0),\qquad e_2=(0,1)。
+\]
+由于 \(\{e_1,e_2\}\) 线性无关，且
+\[
+\operatorname{span}\{e_1,e_2\}=\mathbb{R}^2,
+\]
+故 \(\{e_1,e_2\}\) 是 \(\mathbb{R}^2\) 的 Hamel 基。
+
+任意向量 \(x=(x_1,x_2)\in\mathbb{R}^2\) 都可以唯一表示为
+\[
+x = x_1 e_1 + x_2 e_2。
+\]
+\end{example}
+
+\begin{definition}[Schauder（绍德尔）基———绍德尔是可数维才能用]
+设 \(\{e_n\mid n\in\mathbb{N}\}\) 是 \(X\) 中的点列，  
+如果每一个 \(x\in X\) 可唯一地表示为
+\[
+x=\sum_{k=1}^{\infty}\xi_k e_k,\qquad \xi_k\in K,
+\]
+则称 \(\{e_n\mid n\in\mathbb{N}\}\) 为 \(X\) 的 \textbf{Schauder 基}。
+\end{definition}
+
+\begin{example}
+在空间 \(l^p(p\ge1)\) 中，设
+\[
+e_1=(1,0,0,\dots),\quad e_2=(0,1,0,\dots),\quad e_3=(0,0,1,0,\dots),
+\]
+则 \(\{e_n\}\) 是一个 Schauder 基。
+\end{example}
+
+\begin{remark}
+\begin{itemize}
+  \item 有限维线性空间的基既是 Hamel 基又是 Schauder 基；
+  \item 具有 Schauder 基的 Banach 空间一定是可分空间，反之不一定成立。
+\end{itemize}
+\end{remark}
+\begin{itemize}
+  \item \textbf{Hamel 基}：每个向量 \(x\in X\) 可以用有限个基向量线性表示：
+  \[
+  x=a_1x_{\alpha_1}+a_2x_{\alpha_2}+\cdots+a_nx_{\alpha_n}。
+  \]
+  它属于代数意义下的“线性空间”，不需要拓扑或范数，只允许有限项线性组合。  
+  所有线性空间（包括无限维）都有 Hamel 基（依赖选择公理），并且表示唯一。  
+  典型例子是 \(\mathbb{R}^n\) 的标准基。
+
+  \item \textbf{Schauder 基}：每个向量 \(x\in X\) 可以用无穷级数表示：
+  \[
+  x=\sum_{k=1}^{\infty}\xi_k e_k。
+  \]
+  它属于拓扑线性空间（通常是 Banach 空间），允许无限项线性组合（要求级数收敛到 \(x\)）。  
+  只有某些 Banach 空间存在 Schauder 基，系数序列唯一。  
+  典型例子是 \(l^p(1\le p<\infty)\) 的标准序列基 \(e_n=(0,\dots,1,\dots)\)。
+
+  \item \textbf{直观理解}：
+  \begin{itemize}
+    \item Hamel 基：有限个向量“拼出一切”，强调代数生成；
+    \item Schauder 基：无限个向量“逼近一切”，强调极限收敛。
+  \end{itemize}
+  因此：Hamel 基是代数的概念，Schauder 基是分析的概念。
+\end{itemize}
+\begin{definition}[等价范数]
+设在线性空间 \(X\) 上有两个范数 \(\|\cdot\|_1\) 与 \(\|\cdot\|_2\)，  
+如果存在常数 \(a,b>0\)，使得对任意 \(x\in X\) 都有
+\[
+a\|x\|_1 \le \|x\|_2 \le b\|x\|_1,
+\]
+则称这两个范数是\textbf{等价范数}。
+
+若线性空间 \(X\) 上的两个范数 \(\|\cdot\|_1\) 与 \(\|\cdot\|_2\) 等价，  
+则赋范空间 \((X,\|\cdot\|_1)\) 与 \((X,\|\cdot\|_2)\) 代数同构、拓扑同胚。
+\end{definition}
+\section{有穷维赋范空间}
+\begin{remark}[有限维与无限维空间的区别]
+一个命题的逆命题不一定成立，但其\textbf{逆否命题一定成立}。  
+若“有限维空间具有性质 \(A\)”成立，则其逆否命题为：
+
+\[
+\text{若一个空间不具备性质 }A,\text{ 则它不是有限维空间。}
+\]
+
+因此：
+
+\begin{itemize}
+  \item 本节介绍的性质均是有限维空间特有的；
+  \item 这些性质可以作为判断空间是否为有限维的判定定理；
+  \item 无限维空间\textbf{不具备这些性质！}
+  \item 通过介绍有限维空间特有的性质，可以反映有限维与无限维空间的区别。
+\end{itemize}
+\end{remark}
+\begin{theorem}[同胚]
+任意 \(n\) 维赋范空间必与 \(\mathbb{R}^n\) 代数同构、拓扑同胚。
+
+在代数同构、拓扑同胚意义下，有限维赋范空间只有一个，即 \(\mathbb{R}^n\)。
+\end{theorem}
+\begin{lemma}[F. Riesz 引理]
+若 \(X_0\) 是赋范空间 \(X\) 的一个真闭线性子空间，  
+则对任意 \(\varepsilon>0\)，存在 \(x_0\in X\)，使得 \(\|x_0\|=1\)，且对任意 \(x\in X_0\)，有
+\[
+\|x - x_0\| > 1 - \varepsilon。
+\]
+\end{lemma}
+\begin{theorem}
+线性赋范空间 \(X\) 是有限维的，当且仅当 \(X\) 的任意有界集是列紧的。
+\end{theorem}

@@ -1,0 +1,1081 @@
+\chapter{作业}
+\section{第一次作业}
+\begin{homework}[第 3 题]
+设 $d_1,d_2,\dots,d_m,\dots$ 是集 $X$ 上的距离，证明：
+
+\begin{enumerate}
+  \item $d = \sup\limits_{1 \leq i \leq m} d_i$；
+  \item $d = \sqrt{d_1^2 + d_2^2 + \cdots + d_m^2}$；
+  \item $d = \sum\limits_{k=1}^{\infty} \frac{1}{2^k} \cdot \frac{d_k}{1+d_k}$；
+\end{enumerate}
+
+中的每一个也是 $X$ 上的距离。
+\end{homework}
+
+\begin{proof}
+设每个 $d_i$ ($i=1,2,\dots,m,\dots$) 都是集合 $X$ 上的距离。定义
+\[
+d(x,y)=\sup_{1\le i\le m} d_i(x,y), \qquad x,y\in X.
+\]
+我们验证 $d$ 满足距离的三条性质。
+
+\textbf{(1) 非负性与分离性：}
+由于每个 $d_i(x,y)\ge0$，显然 $d(x,y)\ge0$。  
+若 $d(x,y)=0$，则有 $d_i(x,y)\le d(x,y)=0$ 对一切 $i$ 成立，从而 $d_i(x,y)=0$。  
+由每个 $d_i$ 的分离性可知 $x=y$。  
+反之若 $x=y$，则 $d_i(x,y)=0$，于是 $\sup_i d_i(x,y)=0$。  
+因此 $d(x,y)=0\iff x=y$。
+
+\textbf{(2) 对称性：}
+因为每个 $d_i(x,y)=d_i(y,x)$，故
+\[
+d(x,y)=\sup_i d_i(x,y)=\sup_i d_i(y,x)=d(y,x)。
+\]
+
+\textbf{(3) 三角不等式：}
+任取 $x,y,z\in X$，由每个 $d_i$ 的三角不等式有
+\[
+d_i(x,z)\le d_i(x,y)+d_i(y,z).
+\]
+于是
+\[
+\sup_i d_i(x,z)\le \sup_i[d_i(x,y)+d_i(y,z)]
+\le \sup_i d_i(x,y)+\sup_i d_i(y,z),
+\]
+即
+\[
+d(x,z)\le d(x,y)+d(y,z).
+\]
+
+综上，$d$ 满足距离的三条性质，因此 $d$ 是 $X$ 上的距离。
+\end{proof}
+
+\begin{proof}
+设 $d_1,\dots,d_m$ 是 $X$ 上的距离。定义
+\[
+d(x,y)\;=\;\sqrt{\,d_1(x,y)^2+\cdots+d_m(x,y)^2\,},\qquad x,y\in X.
+\]
+验证 $d$ 为距离的三条性质。
+
+\textbf{(1) 非负性与分离性：}
+显然 $d(x,y)\ge0$。若 $d(x,y)=0$，则每个 $d_i(x,y)=0$，由 $d_i$ 的分离性得 $x=y$。
+反之 $x=y$ 时各 $d_i(x,y)=0$，故 $d(x,y)=0$。于是 $d(x,y)=0\iff x=y$。
+
+\textbf{(2) 对称性：}
+由于 $d_i(x,y)=d_i(y,x)$，故
+\[
+d(x,y)=\sqrt{\sum_{i=1}^m d_i(x,y)^2}
+=\sqrt{\sum_{i=1}^m d_i(y,x)^2}=d(y,x).
+\]
+
+\textbf{(3) 三角不等式：}
+任取 $x,y,z\in X$。由每个 $d_i$ 的三角不等式，
+\[
+d_i(x,z)\le d_i(x,y)+d_i(y,z)\quad (i=1,\dots,m).
+\]
+两边平方并对 $i$ 求和得
+\[
+\sum_{i=1}^m d_i(x,z)^2
+\;\le\;\sum_{i=1}^m\!\big(d_i(x,y)+d_i(y,z)\big)^2
+=\sum_{i=1}^m d_i(x,y)^2+\sum_{i=1}^m d_i(y,z)^2
++2\sum_{i=1}^m d_i(x,y)\,d_i(y,z).
+\]
+记向量 $a=(d_1(x,y),\dots,d_m(x,y))$、$b=(d_1(y,z),\dots,d_m(y,z))$，
+则上式右端为 $\|a\|_2^2+\|b\|_2^2+2\langle a,b\rangle$。
+由柯西–不等式 $\langle a,b\rangle\le\|a\|_2\|b\|_2$，故
+\[
+\sum_{i=1}^m d_i(x,z)^2 \;\le\; \big(\|a\|_2+\|b\|_2\big)^2.
+\]
+取平方根，注意两侧非负（距离非负），得到
+\[
+d(x,z)=\sqrt{\sum_{i=1}^m d_i(x,z)^2}
+\;\le\;\|a\|_2+\|b\|_2
+=\sqrt{\sum_{i=1}^m d_i(x,y)^2}+\sqrt{\sum_{i=1}^m d_i(y,z)^2}
+=d(x,y)+d(y,z).
+\]
+
+综上，$d$ 满足距离的三条性质，因此是 $X$ 上的距离。
+\end{proof}
+\begin{proof}
+设 $\{d_k\}_{k\ge1}$ 是 $X$ 上的一列距离，定义
+\[
+d(x,y)=\sum_{k=1}^{\infty}\frac1{2^k}\,\frac{d_k(x,y)}{1+d_k(x,y)},\qquad x,y\in X.
+\]
+记
+\[
+\delta_k(x,y)=\frac{d_k(x,y)}{1+d_k(x,y)}\quad (k\ge1),
+\]
+则 $0\le \delta_k(x,y)\le 1$，且
+\[
+d(x,y)=\sum_{k=1}^\infty 2^{-k}\delta_k(x,y)
+\]
+对任意 $x,y$ 都收敛并有限。
+
+下证 $d$ 满足距离的三条公理。
+
+\medskip\noindent
+(1) 非负性与分离性：
+
+显然 $d(x,y)\ge0$。若 $d(x,y)=0$，则每一项 $2^{-k}\delta_k(x,y)\ge0$ 且和为 $0$，
+故 $\delta_k(x,y)=0$，从而 $d_k(x,y)=0$，于是 $x=y$。
+反之若 $x=y$，则各 $d_k(x,y)=0$，故 $d(x,y)=0$。
+
+\medskip\noindent
+(2) 对称性：
+
+因为每个 $d_k$ 对称，故 $\delta_k(x,y)=\delta_k(y,x)$，于是
+\[
+d(x,y)=\sum_{k}2^{-k}\delta_k(x,y)
+      =\sum_{k}2^{-k}\delta_k(y,x)
+      =d(y,x).
+\]
+
+\medskip\noindent
+(3) 三角不等式：
+
+令 $f(t)=\dfrac{t}{1+t}$，$t\ge0$。可验证 $f$ 单调递增且次可加：
+\[
+f(a+b)\le f(a)+f(b),\qquad a,b\ge0.
+\]
+对任意 $x,y,z\in X$，由 $d_k$ 的三角不等式得
+\[
+d_k(x,z)\le d_k(x,y)+d_k(y,z),
+\]
+两端作用 $f$，得
+\[
+\delta_k(x,z)=f(d_k(x,z))
+\le f(d_k(x,y)+d_k(y,z))
+\le f(d_k(x,y))+f(d_k(y,z))
+=\delta_k(x,y)+\delta_k(y,z).
+\]
+乘以 $2^{-k}$ 并对 $k$ 求和，得到
+\[
+d(x,z)=\sum_{k}2^{-k}\delta_k(x,z)
+\le \sum_{k}2^{-k}\delta_k(x,y)+\sum_{k}2^{-k}\delta_k(y,z)
+=d(x,y)+d(y,z).
+\]
+
+综上，$d$ 满足非负性与分离性、对称性及三角不等式，因此是 $X$ 上的一个距离。
+\end{proof}
+\begin{homework}[第 8 题]
+试举一例说明有界集不是全有界集。
+\end{homework}
+
+\begin{proof}
+在度量空间 $(\ell^\infty, d_\infty)$ 中，定义
+\[
+\ell^\infty = \Bigl\{ x=(x_1,x_2,\dots):\ \sup_n |x_n|<\infty \Bigr\}, 
+\qquad 
+d_\infty(x,y) = \sup_n |x_n - y_n|.
+\]
+考虑其中的子集
+\[
+A = \{ e_n = (0,0,\dots,1,0,\dots): n=1,2,\dots \},
+\]
+其中 $e_n$ 表示第 $n$ 个分量为 $1$，其余为 $0$ 的序列。
+
+显然，任意 $e_n$ 的范数为 $1$，因此集合 $A$ 有界，因为
+\[
+d_\infty(e_m,e_n) = 1 \quad (\forall\, m\ne n).
+\]
+
+然而，$A$ 不是全有界的。  
+事实上，任取 $\varepsilon < 1$，由于任意两个不同点之间的距离都是 $1>\varepsilon$，
+所以一个 $\varepsilon$-球最多只能包含一个 $e_n$。
+因此无法用有限个 $\varepsilon$-球覆盖 $A$。
+故 $A$ 有界但不全有界。
+\end{proof}
+
+\begin{homework}[第 9 题]
+证明距离空间中每一个 Cauchy 列是有界集。
+\end{homework}
+\begin{solution}
+设 $(X,d)$ 为距离空间，$\{x_n\}$ 为 $X$ 中的一个 Cauchy 列。  
+由 Cauchy 列的定义，对 $\varepsilon=1$，存在 $N\in\mathbb{N}$，使得当
+$n,m\ge N$ 时有
+\[
+d(x_n,x_m)<1.
+\]
+
+取固定的 $x_N$，则对一切 $n\ge N$，有
+\[
+d(x_n,x_N)\le d(x_n,x_m)+d(x_m,x_N)<1+0=1,
+\]
+其中令 $m=N$ 即可。因此
+\[
+d(x_n,x_N)<1,\qquad n\ge N.
+\]
+
+再令
+\[
+R:=\max\{1,\ d(x_1,x_N),\dots,d(x_{N-1},x_N)\},
+\]
+则对任意 $n\in\mathbb{N}$ 都有
+\[
+d(x_n,x_N)\le R.
+\]
+于是序列 $\{x_n\}$ 全部落在以 $x_N$ 为中心、半径为 $R$ 的球
+\[
+B(x_N,R)=\{x\in X:\ d(x,x_N)\le R\}
+\]
+之内。
+
+因此 $\{x_n\}$ 是有界集，证毕。
+\end{solution}
+\begin{homework}[第 10 题]
+证明距离空间的完备子空间是闭子空间。
+\end{homework}
+
+\begin{proof}
+设 $(X,d)$ 为距离空间，$Y\subset X$，并赋予 $Y$ 以限制度量 $d|_{Y\times Y}$。
+若 $(Y,d|_{Y\times Y})$ 完备，证明 $Y$ 在 $X$ 中闭。
+
+取任意列 $(y_n)\subset Y$，若 $y_n\to x$ 于 $X$，则 $(y_n)$ 在 $X$ 中是柯西列。
+由于限制度量不增，$(y_n)$ 在子空间 $(Y,d|_{Y\times Y})$ 仍为柯西列。
+由 $Y$ 的完备性，存在 $y\in Y$ 使得 $y_n\to y$ 于 $Y$，从而也在 $X$ 中有 $y_n\to y$。
+极限在度量空间中唯一，故 $x=y\in Y$。
+于是 $Y$ 含有其在 $X$ 中所有的极限点，即 $Y$ 为 $X$ 的闭子空间。
+\end{proof}
+
+\begin{definition}[闭子空间]
+设 $(X,d)$ 是一个度量空间（或更一般的拓扑空间），$Y\subset X$ 是它的一个子空间。
+
+若 $Y$ 在 $X$ 中是闭集，即对于任意序列 $(y_n)\subset Y$，只要 $y_n\to x$ 于 $X$，
+就必有 $x\in Y$，则称 $Y$ 为 $X$ 的\textbf{闭子空间（closed subspace）}。
+
+换言之，闭子空间是指一个子空间，且它包含它在母空间中的所有极限点。
+\end{definition}
+
+\begin{homework}[第 13 题]
+设 $F_1, F_2$ 是距离空间 $X$ 中不相交的闭集，证明存在 $X$ 上的连续函数 $f(x)$，
+使得当 $x \in F_1$ 时 $f(x)=0$，当 $x \in F_2$ 时 $f(x)=1$。
+\end{homework}
+
+\begin{proof}
+对 $i=1,2$，定义点到集合的距离
+\[
+d(x,F_i):=\inf_{y\in F_i} d(x,y),\qquad x\in X.
+\]
+因为 $F_1,F_2$ 闭且 $F_1\cap F_2=\varnothing$，对任意 $x\in X$ 至多有一个 $d(x,F_i)=0$，
+从而 $d(x,F_1)+d(x,F_2)>0$。定义
+\[
+f(x):=\frac{d(x,F_1)}{d(x,F_1)+d(x,F_2)},\qquad x\in X.
+\]
+显然 $0\le f(x)\le 1$。并且
+\[
+x\in F_1 \Rightarrow d(x,F_1)=0 \Rightarrow f(x)=0,\qquad
+x\in F_2 \Rightarrow d(x,F_2)=0 \Rightarrow f(x)=1.
+\]
+
+只需证明 $f$ 连续。注意映射 $x\mapsto d(x,F_i)$ 连续（见下述引理），
+且分母 $d(x,F_1)+d(x,F_2)$ 处处为正，故由四则运算与复合的连续性可知 $f$ 连续。
+于是 $f:X\to[0,1]$ 连续，且满足题设边界条件。
+\end{proof}
+
+\begin{lemma}
+对任意非空闭集 $F\subset X$，函数 $x\mapsto d(x,F)$ 在 $X$ 上是 $1$-Lipschitz 的，因而连续。
+\end{lemma}
+
+\begin{proof}
+任取 $x,z\in X$，对任何 $y\in F$ 有
+\[
+\big|d(x,y)-d(z,y)\big|\le d(x,z).
+\]
+取 $y$ 上确界（或对 $y$ 的下确界）得到
+\[
+\big|d(x,F)-d(z,F)\big|
+=\big|\inf_{y\in F} d(x,y)-\inf_{y\in F} d(z,y)\big|
+\le d(x,z).
+\]
+故 $x\mapsto d(x,F)$ 为 $1$-Lipschitz，特别地连续。
+\end{proof}
+
+\begin{homework}[第 20 题]
+设 $X$ 是紧距离空间，$T$ 是 $X$ 上到自身的映射且满足条件：对任意 $x,y \in X$，当 $x\neq y$ 时，
+\[
+d(Tx,Ty) < d(x,y).
+\]
+证明 $T$ 在 $X$ 上有唯一不动点。
+\end{homework}
+\section{第二次作业}
+\begin{homework}[3]
+设 $M$ 是空间 $\ell^\infty$ 中除有穷个坐标之外为 $0$ 的元素之全体构成的子空间。证明 $M$ 不是闭子空间。
+\end{homework}
+\begin{solution}
+设
+\[
+x_n=\{1,\tfrac12,\dots,\tfrac1n,0,0,\dots\}\in M \qquad (n=1,2,\dots),
+\]
+并令
+\[
+x=\{1,\tfrac12,\tfrac13,\dots\}\in \ell^\infty.
+\]
+
+则
+\[
+\|x_n-x\|_\infty=\sup_{k\ge n+1}\frac1k\le \frac1{\,n+1\,}\longrightarrow 0
+\qquad (n\to\infty).
+\]
+
+但 $x\notin M$，因为它有无穷多个非零项。
+
+因此 $M$ 不是闭子空间。
+\end{solution}
+
+\begin{homework}[4]
+试举例说明，在赋范空间中，由
+\[
+\sum_{n=1}^{\infty} \|x_n\| < \infty
+\]
+一般地不能推出
+\[
+\sum_{n=1}^{\infty} x_n
+\]
+收敛。
+\end{homework}
+\begin{solution}
+设 $X$ 表示 $\ell^\infty$ 中所有除去有限个坐标之外其余坐标为 $0$ 的元素的全体。令
+\[
+x_n=(\underbrace{0,\ldots,0}_{n\text{ 个}},\,\tfrac{1}{n^2},0,\ldots),\qquad n=1,2,\ldots
+\]
+则 $x_n\in X$，并且
+\[
+\sum_{n=1}^\infty \|x_n\|=\sum_{n=1}^\infty \frac{1}{n^2}<\infty.
+\]
+
+但是令
+\[
+s_n=\sum_{k=1}^n x_k
+    =(1,\tfrac{1}{2^2},\tfrac{1}{3^2},\ldots,\tfrac{1}{n^2},0,\ldots)
+    \longrightarrow (1,\tfrac{1}{2^2},\tfrac{1}{3^2},\ldots).
+\]
+其极限具有无穷多个非零坐标，不属于 $X$。
+
+因此 $\{s_n\}$ 在 $X$ 中不收敛，说明 $X$ 不是闭子空间。
+\end{solution}
+\begin{homework}[11]
+设 $A$ 是线性空间 $X$ 中的子集。证明：
+\[
+\operatorname{Co}(A) = \left\{ \sum_{k=1}^n \alpha_k x_k \in X \,\middle|\, n \in \mathbb{N},\, x_k \in A,\, \alpha_k \ge 0,\, \sum_{k=1}^n \alpha_k = 1 \right\}
+\]
+是 $A$ 的凸包。
+\end{homework}
+\begin{proof}
+设 $x,y\in \operatorname{Co}(A)$。根据凸包的定义，存在非负系数
+\[
+\lambda_i\ge 0 \ (i=1,\dots,n),\qquad \sum_{i=1}^n \lambda_i=1,\qquad x_i\in A,
+\]
+使得
+\[
+x=\sum_{i=1}^n \lambda_i x_i.
+\]
+同理，存在非负系数
+\[
+\mu_j\ge 0 \ (j=1,\dots,m),\qquad \sum_{j=1}^m \mu_j=1,\qquad y_j\in A,
+\]
+使得
+\[
+y=\sum_{j=1}^m \mu_j y_j.
+\]
+
+于是对任意 $\alpha\in[0,1]$，有
+\[
+\sum_{i=1}^n \alpha\lambda_i+\sum_{j=1}^m (1-\alpha)\mu_j
+=\alpha+(1-\alpha)=1.
+\]
+因此
+\[
+\alpha x+(1-\alpha)y
+=\alpha\sum_{i=1}^n \lambda_i x_i +(1-\alpha)\sum_{j=1}^m \mu_j y_j
+=\sum_{i=1}^n \alpha\lambda_i x_i + \sum_{j=1}^m (1-\alpha)\mu_j y_j\in \operatorname{Co}(A).
+\]
+说明 $\operatorname{Co}(A)$ 是凸集，且显然 $A\subset \operatorname{Co}(A)$。
+
+---
+
+另一方面，设 $E$ 是包含 $A$ 的凸集。取 $x_1,x_2,x_3\in A$，系数 $\lambda_i>0$，且 $\lambda_1+\lambda_2+\lambda_3=1$，则
+\[
+\lambda_1 x_1+\lambda_2 x_2+\lambda_3 x_3
+= \lambda_1 x_1 + (\lambda_2+\lambda_3)
+\left( \frac{\lambda_2}{\lambda_2+\lambda_3}x_2+\frac{\lambda_3}{\lambda_2+\lambda_3}x_3\right).
+\]
+由于
+\[
+\frac{\lambda_2}{\lambda_2+\lambda_3} + \frac{\lambda_3}{\lambda_2+\lambda_3}=1,
+\]
+故
+\[
+\frac{\lambda_2}{\lambda_2+\lambda_3} x_2+\frac{\lambda_3}{\lambda_2+\lambda_3} x_3\in E,
+\]
+而 $E$ 又是凸集，所以上式仍属于 $E$。  
+
+对 $x_1,x_2,\dots,x_n\in A$ 可用归纳法推广，若 $\lambda_i>0$ 且 $\sum_{i=1}^n\lambda_i=1$，则
+\[
+\sum_{i=1}^n \lambda_i x_i\in E.
+\]
+
+因此 $\operatorname{Co}(A)\subset E$。故 $\operatorname{Co}(A)$ 是包含 $A$ 的最小凸集。
+\end{proof}
+\begin{dxtips}
+   两个范数 $\|\cdot\|_1$ 和 $\|\cdot\|_2$ 被称为等价，
+如果存在常数 $C_1>0$ 与 $C_2>0$，使得对任意 $x$ 都有
+\[
+C_1\|x\|_1 \le \|x\|_2 \le C_2\|x\|_1 .
+\]
+\end{dxtips}
+\begin{homework}[13]
+设 $(X_1, \|\cdot\|_1)$, $(X_2, \|\cdot\|_2)$ 是赋范空间，在乘积线性空间 $X_1 \times X_2$ 中定义
+\[
+\|z\|_1 = \|x_1\|_1 + \|x_2\|_2,\qquad
+\|z\|_2 = \max(\|x_1\|_1, \|x_2\|_2),
+\]
+其中 $z = (x_1, x_2) \in X_1 \times X_2$，证明：上述两范数在 $X_1 \times X_2$ 上是等价范数。
+\end{homework}
+\begin{solution}
+设
+\[
+z=(x_1,x_2)\in X_1\times X_2,\qquad 
+a=\|x_1\|_1,\; b=\|x_2\|_2\ (\ge0).
+\]
+按题意
+\[
+\|z\|_1 = \|x_1\|_1+\|x_2\|_2 = a+b,\qquad
+\|z\|_2 = \max(\|x_1\|_1,\|x_2\|_2)=\max(a,b).
+\]
+
+对任意非负数 $a,b$，有
+\[
+\max(a,b)\le a+b\le 2\max(a,b),
+\]
+于是
+\[
+\|z\|_2 = \max(a,b)\le a+b=\|z\|_1\le 2\max(a,b)=2\|z\|_2.
+\]
+
+因此存在常数 $c=1,C=2$ 使得
+\[
+c\|z\|_2\le\|z\|_1\le C\|z\|_2,\qquad \forall\,z\in X_1\times X_2,
+\]
+即这两个范数在 $X_1\times X_2$ 上是等价范数。
+\end{solution}
+\begin{homework}[14]
+设 $X$ 是区间 $[a,b]$ 上所有连续函数全体，按通常方式定义线性运算所成的线性空间。对于 $x \in X$ 定义：
+\[
+\|x\| = \sup_{a \le t \le b} |x(t)|,\qquad
+\|x\|_1 = \int_a^b |x(t)|\,dt.
+\]
+证明：$\|\cdot\|$ 与 $\|\cdot\|_1$ 是 $X$ 上两个不等价的范数。
+\end{homework}
+\begin{proof}
+由于 $(X,\|\cdot\|)=C[a,b]$ 是 Banach 空间，而 $(X,\|\cdot\|_1)$ 不完备，
+因此这两个范数不能等价。
+
+事实上，若两范数等价，则在同一线性空间上会诱导出相同的完备性，
+即完备空间在等价范数下仍然完备。但 $(X,\|\cdot\|)$ 完备，
+而 $(X,\|\cdot\|_1)$ 不完备，二者完备性不同，
+故 $\|\cdot\|$ 与 $\|\cdot\|_1$ 不等价。
+\end{proof}
+\begin{homework}[16]
+设 $(X,\|\cdot\|)$ 是赋范空间，$Y$ 是 $X$ 的子空间。对于 $x \in X$，令
+\[
+\delta = d(x,Y) := \inf_{y \in Y} \|x - y\|.
+\]
+如果存在 $y_0 \in Y$ 使得 $\|x - y_0\| = \delta$，称 $y_0$ 是 $x$ 的最佳逼近。
+\begin{dxtips}
+    也就是说下确界界得在里面此时inf=min
+\end{dxtips}
+\begin{enumerate}[(1)]
+  \item 证明：如果 $Y$ 是 $X$ 的有穷维子空间，则对于每一个 $x \in X$，存在最佳逼近；
+  \item 试举例说明，当 $Y$ 不是有穷维空间时，(1) 的结论不成立；
+  \item 试举例说明，一般地，最佳逼近不唯一；
+  \item 证明：对于每一个 $x \in X$，关于子空间 $Y$ 的最佳逼近点集是凸集。
+\end{enumerate}
+\end{homework}
+\begin{itemize}
+  \item \textbf{(1) 定义不同：}
+  \[
+  \inf A = \text{所有下界中最大的一个},\qquad
+  \min A = \text{集合中真正最小的元素}.
+  \]
+
+  \item \textbf{(2) 是否需要集合中存在元素达到该值：}  
+  \begin{itemize}
+    \item $\min A$ 要求存在 $a_0\in A$ 使 $a_0\le a$ 对一切 $a\in A$；
+    \item $\inf A$ 无需任何元素真正取得该值。
+  \end{itemize}
+
+  \item \textbf{(3) 是否一定存在：}  
+  \begin{itemize}
+    \item $\min A$ \textbf{可能不存在}；
+    \item $\inf A$ 对所有非空有下界集合 \textbf{一定存在}。
+  \end{itemize}
+
+  \item \textbf{(4) 它们的关系：}
+  \[
+  \min A \text{ 若存在，则必有 } \min A = \inf A;
+  \]
+  \[
+  \text{但 } \inf A = \text{某值} \quad\text{并不意味着 } \min A \text{存在}.
+  \]
+
+  \item \textbf{(5) 典型例子：}  
+  对集合 
+  \[
+  A = \left\{1+\frac{1}{n} : n=1,2,3,\dots\right\}
+  \]
+  有
+  \[
+  \inf A = 1,\qquad \text{但 }\min A\text{ 不存在}.
+  \]
+\end{itemize}
+\begin{proof}
+\begin{itemize}
+
+%-------------------- (1) --------------------
+\item[(1)]  
+对给定 $x\in X$，令  
+\[
+B=\{\,y\in Y:\ \|y\|\le 2\|x\|\,\}.
+\]
+于是
+\[
+d(x,B)=\inf_{y\in B}\|x-y\|\le \|x\|.
+\]
+
+若 $y\notin B$，则 $\|y\|>2\|x\|$，且
+\[
+\|x-y\|\ge \|y\|-\|x\|>\|x\|\ge 2d(x,B).
+\]
+因此，关于 $x$ 的最佳逼近必存在于 $B$ 中，而 $B\subset Y$ 是紧子集且范数是连续函数，因此存在 $y_0\in B$ 使得 $\|x-y\|$ 在 $y=y_0$ 取得最小值。
+\begin{dxtips}
+这里用到了有限维空间，闭有界集合是紧集这一性质，紧性保证 inf 能被实际取得，也就是 min 存在。
+\end{dxtips}
+%-------------------- (2) --------------------
+\item[(2)]
+设 $Y$ 是 $C\!\left[0,\tfrac12\right]$ 中所有多项式的集合。则 $Y$ 为 $X$ 的子空间，且 $\dim Y=\infty$。
+
+考虑
+\[
+x(t)=\frac{1}{1-t},
+\]
+则存在多项式 $y$ 使得 $\|x-y\|<\varepsilon$，因此 $d(x,Y)=0$。
+
+若存在 $y_0\in Y$ 使 $\|x-y_0\|=\delta=0$，则应有 $x=y_0$，但 $x$ 不是多项式，所以不存在这样的 $y_0$。故 $\{s_n\}$ 在 $Y$ 中不收敛。
+
+%-------------------- (3) --------------------
+\item[(3)]
+设 $(X,\|\cdot\|)$ 是序实数对 $(\xi_1,\xi_2)$ 的线性空间，并定义
+\[
+\|x\|=|\xi_1|+|\xi_2|,\qquad x=(\xi_1,\xi_2).
+\]
+取 $x=(1,-1)\in X$，并定义
+\[
+Y=\{(\eta,\eta)\in X:\ \eta\in\mathbb R\}.
+\]
+则 $Y$ 是 $X$ 的子空间。
+
+对任意 $y=(\eta,\eta)\in Y$，
+\[
+\|x-y\|=|1-\eta|+|-1-\eta|\ge 2,
+\]
+故 $d(x,Y)=2$。所有满足 $|\eta|\le 1$ 的 $(\eta,\eta)$ 都是关于 $x$ 的最佳逼近。
+
+%-------------------- (4) --------------------
+\item[(4)]
+设 $M$ 是 $x\in X$ 关于 $Y$ 的最佳逼近点集。若 $M=\varnothing$ 或仅包含一个点，结论显然成立。
+
+若 $y,z\in M$，则
+\[
+\|x-z\|=\|x-y\|=\delta.
+\]
+令
+\[
+w=\alpha y+(1-\alpha)z,\qquad 0\le \alpha\le 1.
+\]
+则 $w\in Y$，并且
+\[
+\begin{aligned}
+\|x-w\|
+&=\|x-\alpha y-(1-\alpha)z\|\\
+&=\|\alpha(x-y)+(1-\alpha)(x-z)\|\\
+&\le \alpha\|x-y\|+(1-\alpha)\|x-z\|\\
+&=\alpha\delta+(1-\alpha)\delta=\delta.
+\end{aligned}
+\]
+因此 $\|x-w\|=\delta$，即 $w\in M$，从而 $M$ 为凸集。
+
+\end{itemize}
+\end{proof}
+\section{第三次作业}
+\begin{homework}[题目 1]
+
+设 $\sup_{n\ge 1}|a_n|<\infty$。在 $l^1$ 上定义算子
+\[
+T:\; y = Tx,\qquad x=\{\xi_k\},\; y=\{\eta_k\},\qquad \eta_k = a_k \xi_k\ (k=1,2,\ldots).
+\]
+证明：$T$ 是 $l^1$ 上的有界线性算子，并且
+\[
+\|T\|=\sup_{n\ge 1}|a_n|.
+\]
+
+\end{homework}
+\begin{dxtips}
+对l1空间不熟悉，可以把常用空间以及他们的范数写到一张纸上。就是一范数数下绝对值求和小于无穷的序列，一范数就是序数绝对值求和。现在只能证明小于等于，但是不确定是否真的能取到。ani这步是根据上确界的定义写出来的是为了确保｜T｜还能大于等于sup｜ai\[
+\text{令 } \{a_k\}_{k\ge1} \text{ 为给定数列。}
+\]
+
+\[
+\begin{aligned}
+&\text{对于任意一项，我们记为 } a_i ; \\[4pt]
+&\text{为了逼近 } \sup_{k\ge1}|a_k| \text{，我们特意选取某个下标 } n_i ; \\[4pt]
+&\text{例如，当 } n_i = 100 \text{ 时，} \ a_{n_i} = a_{100}. 
+\end{aligned}
+\]
+
+\[
+\text{因此，} a_{n_i} \text{ 是序列中被选出来、用来逼近上确界的那一项。}
+\]
+这里x0是特意取的为的就是让T能取到sup|a_k|这个值，因为开始只是限制他比这个值是小于等于需要一个大于等于他才能取
+\end{dxtips}
+\begin{proof}
+    
+
+\[
+\|Tx\|
+= \sum_{k=1}^{\infty} |a_k \xi_k|
+\le \left( \sup_{k\ge 1} |a_k| \right)
+     \left( \sum_{k=1}^{\infty} |\xi_k| \right)
+= \left( \sup_{k\ge 1} |a_k| \right) \|x\|.
+\]
+
+由此得 $T$ 是 $\ell^1$ 上的有界线性算子，并且
+\[
+\|T\| \le \sup_{k\ge 1} |a_k|.
+\]
+
+另一方面，对任意自然数 $n$，存在 $n_i$ 使得
+\[
+|a_{n_i}| > \sup_{i\ge 1} |a_i| - \frac{1}{n}.
+\]
+
+取 $x_0 = e_{n_i}$（第 $n_i$ 项为 $1$ 其余项均为 $0$ 的数列），则 $\|x_0\| = 1$，且
+\[
+\|Tx_0\| = |a_{n_i}|
+\le \|T\| \, \|x_0\|
+= \|T\|.
+\]
+
+因此
+\[
+\sup_{i\ge 1} |a_i| - \frac{1}{n} \le \|T\|, \qquad \forall n,
+\]
+所以
+\[
+\sup_{i\ge 1} |a_i| \le \|T\|.
+\]
+
+故
+\[
+\|T\| = \sup_{k\ge 1} |a_k|.
+\]
+\end{proof}
+\begin{homework}[题目 2]
+
+设 $e_1=(1,0,\ldots,0)$、$e_2=(0,1,0,\ldots,0)$、$\ldots$、$e_n=(0,\ldots,0,1)$ 为 $\mathbb{R}^n$ 的基。
+对于 $x=(\xi_1,\ldots,\xi_n)\in \mathbb{R}^n$，若在 $\mathbb{R}^n$ 上定义范数：
+
+\begin{enumerate}
+  \item[(1)] $\displaystyle \|x\|_\infty=\sup_{1\le k\le n} |\xi_k|$；
+  \item[(2)] $\displaystyle \|x\|_1=\sum_{k=1}^n |\xi_k|$；
+\end{enumerate}
+
+试分别求出 $(\mathbb{R}^n)^*$ 的范数。
+
+\end{homework}
+\begin{solution}
+设 $X = (\mathbb{R}^n,\|\cdot\|)$，则 $(\mathbb{R}^n)^*$ 中任意线性泛函 $f$ 都可以唯一写成
+\[
+f(x)=f(\xi_1,\dots,\xi_n)=\sum_{k=1}^n a_k \xi_k,
+\]
+其中 $a=(a_1,\dots,a_n)\in\mathbb{R}^n$ 为常数向量。
+算子范数定义为
+\[
+\|f\|=\sup_{\|x\|=1} |f(x)|.
+\]
+
+\medskip
+\noindent\textbf{(1) 情况一：$\displaystyle \|x\|_\infty = \sup_{1\le k\le n}|\xi_k|$}
+
+先证明上界：对任意 $x\in\mathbb{R}^n$，
+\[
+|f(x)|
+= \Bigl|\sum_{k=1}^n a_k\xi_k\Bigr|
+\le \sum_{k=1}^n |a_k||\xi_k|
+\le \Bigl(\sum_{k=1}^n |a_k|\Bigr)\,\|x\|_\infty.
+\]
+于是
+\[
+\frac{|f(x)|}{\|x\|_\infty}\le \sum_{k=1}^n |a_k|,\qquad x\neq0,
+\]
+从而
+\[
+\|f\|=\sup_{\|x\|_\infty=1}|f(x)|\le \sum_{k=1}^n |a_k|.
+\]
+
+再证明可以逼近该上界。若 $a=(0,\dots,0)$ 则结论显然。否则取
+\[
+x_0=\bigl(\operatorname{sgn}(a_1),\dots,\operatorname{sgn}(a_n)\bigr),
+\]
+其中
+\(
+\operatorname{sgn}(t)=\begin{cases}
+t/|t|, & t\neq0,\\[2pt]
+0, & t=0.
+\end{cases}
+\)
+则有 $\|x_0\|_\infty =1$，且
+\[
+f(x_0)=\sum_{k=1}^n a_k\,\operatorname{sgn}(a_k)
+=\sum_{k=1}^n |a_k|.
+\]
+因此
+\[
+\|f\|\ge |f(x_0)|=\sum_{k=1}^n |a_k|.
+\]
+
+综上，
+\[
+\|f\|=\sum_{k=1}^n |a_k| = \|a\|_1.
+\]
+于是 $(\mathbb{R}^n,\|\cdot\|_\infty)^* \cong (\mathbb{R}^n,\|\cdot\|_1)$ 等距同构。
+
+\medskip
+\noindent\textbf{(2) 情况二：$\displaystyle \|x\|_1 = \sum_{k=1}^n|\xi_k|$}
+
+同样对任意 $x\in\mathbb{R}^n$，
+\[
+|f(x)|
+= \Bigl|\sum_{k=1}^n a_k\xi_k\Bigr|
+\le \sum_{k=1}^n |a_k||\xi_k|
+\le \bigl(\max_{1\le k\le n}|a_k|\bigr)\sum_{k=1}^n|\xi_k|
+= \|a\|_\infty\,\|x\|_1.
+\]
+于是
+\[
+\frac{|f(x)|}{\|x\|_1}\le \|a\|_\infty,\qquad x\neq0,
+\]
+从而
+\[
+\|f\|=\sup_{\|x\|_1=1}|f(x)|\le \|a\|_\infty.
+\]
+
+为得到反向不等式，取 $j$ 使得
+\[
+|a_j|=\max_{1\le k\le n}|a_k|=\|a\|_\infty,
+\]
+令 $x_0=e_j=(0,\dots,0,1,0,\dots,0)$（第 $j$ 分量为 $1$），则
+\[
+\|x_0\|_1=1,\qquad f(x_0)=a_j,\quad |f(x_0)|=|a_j|=\|a\|_\infty,
+\]
+故
+\[
+\|f\|\ge |f(x_0)|=\|a\|_\infty.
+\]
+
+综上，
+\[
+\|f\|=\|a\|_\infty=\max_{1\le k\le n}|a_k|.
+\]
+于是 $(\mathbb{R}^n,\|\cdot\|_1)^* \cong (\mathbb{R}^n,\|\cdot\|_\infty)$ 等距同构。
+
+\end{solution}
+\begin{homework}[题目 7]
+
+设 $X$ 是 Banach 空间，$p(x)$ 是 $X$ 上的泛函，满足：
+
+\begin{itemize}
+  \item[(1)] $p(x)\ge 0$；
+  \item[(2)] 当 $\alpha\ge 0$ 时，$p(\alpha x)=\alpha p(x)$；
+  \item[(3)] $p(x+y)\le p(x)+p(y)$；
+\end{itemize}
+
+并且当 $x_n\to x\ (n\to\infty)$ 时，有
+\[
+\liminf_{n\to\infty} p(x_n)\ge p(x).
+\]
+
+证明：存在常数 $M$，使得
+\[
+p(x)\le M\|x\|\qquad (x\in X).
+\]
+
+\end{homework}
+
+\begin{solution}
+由题意，$p:X\to\mathbb K$（$\mathbb K=\mathbb R$ 或 $\mathbb C$）满足  
+
+\begin{itemize}
+  \item[(1)] $p(x)\ge0$；
+  \item[(2)] 若 $\alpha\ge0$，则 $p(\alpha x)=\alpha p(x)$；
+  \item[(3)] $p(x+y)\le p(x)+p(y)$；
+  \item[(4)] 若 $x_n\to x$，则 $\displaystyle\liminf_{n\to\infty}p(x_n)\ge p(x)$。
+\end{itemize}
+
+由 (2) 取 $\alpha=0$ 得 $p(0)=0$。  
+下面证明存在常数 $M>0$，使得 $p(x)\le M\|x\|$（$x\in X$）。
+
+\medskip\noindent
+\textbf{第一步：用 Baire 定理得到在某个球内有统一上界。}
+
+对每个 $n\in\mathbb N$ 定义
+\[
+E_n:=\{x\in X: p(x)\le n\}.
+\]
+由于 $p$ 下半连续，$\{x:\,p(x)\le n\}$ 是闭集，故 $E_n$ 闭。又因为对任意
+$x\in X$，$p(x)\ge0$ 且有限，取 $n>p(x)$ 即有 $x\in E_n$，于是
+\[
+X=\bigcup_{n=1}^\infty E_n.
+\]
+
+$X$ 为 Banach 空间，故为完备度量空间。由 Baire 类定理，存在某个
+$n_0\in\mathbb N$，使得 $E_{n_0}$ 具有非空内部。于是存在 $x_0\in X$ 和
+$r>0$，使得开球 $B(x_0,r)\subset E_{n_0}$，即
+\[
+\|x-x_0\|<r \;\Rightarrow\; p(x)\le n_0.
+\]
+
+现在取任意 $y\in X$ 满足 $\|y\|<r$。则 $x_0+y\in B(x_0,r)\subset E_{n_0}$，
+所以 $p(x_0+y)\le n_0$。由次可加性 (3) 得
+\[
+p(y)=p\bigl((x_0+y)+(-x_0)\bigr)\le p(x_0+y)+p(-x_0)\le n_0+p(-x_0).
+\]
+因此在 $B(0,r)$ 内 $p$ 有统一上界：
+\[
+\|y\|<r\quad\Rightarrow\quad p(y)\le C:=n_0+p(-x_0).
+\]
+
+\medskip\noindent
+\textbf{第二步：利用正齐次性推广到整个空间。}
+
+令 $x\in X$ 任意且 $x\neq0$。取
+\[
+y=\frac{r}{\|x\|}\,x,
+\]
+则 $\|y\|=r$，从而 $p(y)\le C$。由 (2) 中的正齐次性，
+\[
+p(x)=p\!\left(\frac{\|x\|}{r}y\right)=\frac{\|x\|}{r}\,p(y)
+\le \frac{\|x\|}{r}\,C.
+\]
+对 $x=0$ 有 $p(0)=0$，不等式显然成立。于是对所有 $x\in X$，
+\[
+p(x)\le M\|x\|,\qquad M:=\frac{C}{r}=\frac{n_0+p(-x_0)}{r}.
+\]
+
+\medskip
+
+综上，存在常数 $M>0$ 使得
+\[
+p(x)\le M\|x\|\qquad (x\in X),
+\]
+即命题得证。
+\end{solution}
+
+\begin{homework}[题目 9]
+
+试应用习题一第 15 题的结果证明 Banach–Steinhaus 定理。
+[习题 15]
+设 $X$ 是完备距离空间，$\mathcal{F}$ 是 $X$ 上的实连续函数族且具有性质：
+对于每一 $x\in X$，存在常数 $M_x>0$，使得对于每一 $F\in\mathcal{F}$，
+\[
+|F(x)|\le M_x.
+\]
+证明：存在开集 $U\subset X$ 及常数 $M>0$，使得对于每一 $x\in U$ 及所有
+$F\in\mathcal{F}$，
+\[
+|F(x)|\le M.
+\]
+\end{homework}
+
+\begin{solution}
+Banach--Steinhaus 定理（一致有界原理）的叙述是：
+
+\medskip
+\noindent
+\textbf{定理（Banach--Steinhaus）}\;
+设 $X$ 为 Banach 空间，$Y$ 为赋范线性空间，
+$\{T_\alpha\}_{\alpha\in A}\subset \mathcal{L}(X,Y)$ 为一族连续线性算子，并满足
+对每个 $x\in X$，
+\[
+\sup_{\alpha\in A}\|T_\alpha x\|<\infty.
+\]
+则存在常数 $C>0$ 使得
+\[
+\sup_{\alpha\in A}\|T_\alpha\|\le C,
+\]
+即这族算子是一致有界的。
+
+\medskip
+
+根据习题一第 15 题，我们来证明上面的结论。
+
+\medskip
+\noindent
+\textbf{第一步：把算子族变成函数族并应用习题一第 15 题。}
+
+对每个 $\alpha\in A$，定义实值连续函数
+\[
+F_\alpha:X\to \mathbb{R},\qquad F_\alpha(x)=\|T_\alpha x\|.
+\]
+由于 $T_\alpha$ 连续，所以 $F_\alpha$ 连续。令
+\[
+\mathcal{F}=\{F_\alpha:\alpha\in A\}.
+\]
+由题设“对每个 $x\in X$，$\sup_{\alpha}\|T_\alpha x\|<\infty$”，
+知对每个 $x\in X$，存在常数 $M_x>0$ 使得
+\[
+|F_\alpha(x)|=\|T_\alpha x\|\le M_x,\qquad \forall\,\alpha\in A.
+\]
+于是 $\mathcal{F}$ 满足习题一第 15 题的条件（$X$ 为完备度量空间，
+$\mathcal{F}$ 为 $X$ 上的实值连续函数族，且点态有界）。
+
+由习题一第 15 题可知：存在开集 $U\subset X$ 及常数 $M>0$ 使得
+\[
+|F_\alpha(x)|=\|T_\alpha x\|\le M,\qquad \forall\,x\in U,\ \forall\,\alpha\in A. \tag{1}
+\]
+
+\medskip
+\noindent
+\textbf{第二步：由某个开集上的一致有界推出零点邻域上的一致有界。}
+
+取 $x_0\in U$。因为 $U$ 为开集，存在 $r>0$ 使得开球
+\[
+B(x_0,r)=\{x\in X:\|x-x_0\|<r\}\subset U.
+\]
+对任意 $h\in X$ 满足 $\|h\|<r$，有 $x_0+h\in B(x_0,r)\subset U$，由式 (1) 得
+\[
+\|T_\alpha(x_0+h)\|\le M,\qquad \forall\,\alpha\in A.
+\]
+又因为 $T_\alpha$ 线性，
+\[
+T_\alpha h = T_\alpha(x_0+h)-T_\alpha x_0,
+\]
+从而
+\[
+\|T_\alpha h\|
+\le \|T_\alpha(x_0+h)\|+\|T_\alpha x_0\|
+\le M + \|T_\alpha x_0\|.
+\]
+由点态有界性，存在常数 $M_{x_0}>0$ 使得
+\[
+\|T_\alpha x_0\|\le M_{x_0},\qquad \forall\,\alpha\in A.
+\]
+于是对所有满足 $\|h\|<r$ 的 $h$ 以及所有 $\alpha\in A$，都有
+\[
+\|T_\alpha h\|\le M+M_{x_0}=:M'. \tag{2}
+\]
+这说明在零点的某个邻域
+\[
+B(0,r)=\{h\in X:\|h\|<r\}
+\]
+上这族算子是一致有界的。
+
+\medskip
+\noindent
+\textbf{第三步：由零点邻域上的一致有界推出整体一致有界。}
+
+任取 $x\in X$，若 $x=0$ 则 $\|T_\alpha x\|=0$ 显然有界。
+设 $x\ne0$，令
+\[
+h=\frac{r}{2\|x\|}x.
+\]
+则
+\[
+\|h\|=\frac{r}{2\|x\|}\,\|x\|=\frac{r}{2}<r,
+\]
+故由 (2) 得
+\[
+\|T_\alpha h\|\le M',\qquad \forall\,\alpha\in A.
+\]
+于是利用线性性，
+\[
+\|T_\alpha x\|
+=\frac{2\|x\|}{r}\,\|T_\alpha h\|
+\le \frac{2M'}{r}\,\|x\|.
+\]
+即
+\[
+\|T_\alpha\|\le \frac{2M'}{r},\qquad \forall\,\alpha\in A.
+\]
+从而
+\[
+\sup_{\alpha\in A}\|T_\alpha\|\le \frac{2M'}{r}<\infty.
+\]
+
+这就证明了 Banach--Steinhaus 定理。
+
+\end{solution}
+
+\begin{homework}[题目 10]
+
+设 $X$ 是 Banach 空间，$A,B$ 是 $X$ 的闭子空间，且 $X=A+B$。证明存在常数 $M$，使得  
+每一个 $x\in X$ 有表示 $x=a+b$，其中 $a\in A,\ b\in B$，并且满足
+\[
+\|a\| + \|b\| \le M\|x\|.
+\]
+
+\end{homework}
+\begin{solution}
+设 $X$ 是 Banach 空间，$A,B$ 是 $X$ 的闭子空间，并且 $X=A+B$。
+定义线性算子
+\[
+T: A\times B \to X,\qquad T(a,b)=a+b.
+\]
+首先说明 $A\times B$ 是 Banach 空间：其范数定义为
+\[
+\|(a,b)\|=\|a\|+\|b\|,
+\]
+则 $A$ 与 $B$ 完备意味着 $A\times B$ 也完备，因此为 Banach 空间。
+
+显然 $T$ 是连续线性算子，且 $T$ 映满，因为 $X=A+B$。
+
+由开映射定理（Open Mapping Theorem），连续满射的线性算子必为开映射。
+于是存在常数 $C>0$ 使得
+\[
+B_X(0,1)\subset T\bigl(B_{A\times B}(0,C)\bigr).
+\]
+
+这意味着：对任意满足 $\|x\|\le1$ 的 $x\in X$，存在 $a\in A$、$b\in B$ 使得
+\[
+x=a+b,\qquad \|a\|+\|b\|\le C.
+\]
+
+现在取一般的 $x\ne0$，令
+\[
+y=\frac{x}{\|x\|},
+\]
+则 $\|y\|=1$，从上一步得到
+\[
+y=a'+b',\qquad \|a'\|+\|b'\|\le C.
+\]
+令
+\[
+a=\|x\|\,a',\qquad b=\|x\|\,b',
+\]
+则 $a\in A$，$b\in B$，$x=a+b$，并且
+\[
+\|a\|+\|b\|
+=\|x\|\,(\|a'\|+\|b'\|)
+\le C\|x\|.
+\]
+
+令 $M=C$，即可得到结论：对每个 $x\in X$，存在分解 $x=a+b$（$a\in A$，$b\in B$），并满足
+\[
+\|a\|+\|b\|\le M\|x\|.
+\]
+
+证毕。
+\end{solution}
+
+
+
+
