@@ -1,33 +1,50 @@
-<!-- Author : Dongsheng Deng & Liam Huang-->
-<!-- Program Email: elegantlatex2e@gmail.com -->
+# dx 的泛函分析
 
-[Homepage](https://elegantlatex.org/) | [Github](https://github.com/ElegantLaTeX/ElegantBook) | [CTAN](https://ctan.org/pkg/elegantbook) | [Download](https://github.com/ElegantLaTeX/ElegantBook/releases) | [Wiki](https://github.com/ElegantLaTeX/ElegantBook/wiki) | [Weibo](https://weibo.com/elegantlatex)
+## 序
 
-![License](https://img.shields.io/ctan/l/elegantbook.svg) ![CTAN Version](https://img.shields.io/ctan/v/elegantbook.svg) ![Github Version](https://img.shields.io/github/release/ElegantLaTeX/ElegantBook.svg) ![Repo Size](https://img.shields.io/github/repo-size/ElegantLaTeX/ElegantBook.svg)
+泛函分析很容易让人产生一种“越学越飘”的感觉。
 
----
+对象越来越抽象，空间、算子、泛函、弱收敛、对偶空间、自反性，一个个都不像前面学过的数学那样可以直接抓住。很多人学到这里，会有一种很真实的挫败感: 每个定义我都能读懂，可为什么越往后越像踩在云上？  
 
-# ElegantBook 优美的 LaTeX 书籍模板
+我写这本书的时候，最在意的一件事就是: 不让抽象变成漂浮。
 
-ElegantBook 是为 LaTeX 书籍写作而设计的模板，由 [Dongsheng Deng](https://ddswhu.me/) 和 [Liam Huang](https://liam.page/) 创立，模板创立的初衷是方便我们自己做笔记 :smile:。如果你有其他问题、建议或者报告 bug，可以提交 issues 或者给我们发邮件：elegantlatex2e@gmail.com。QQ 用户交流群：692108391，欢迎加入。
+因为在我看来，泛函分析真正迷人的地方，从来不是它把对象弄得多高深，而是它在一个更高的层次上，把我们前面学过的很多数学重新组织了一遍。距离、范数、完备性、紧性、连续性、极限、函数空间、线性结构，这些东西本来就都学过；到了泛函分析，它们不再各自分散，而是开始彼此咬合，慢慢长成一套更大的框架。
 
-## 重要提示
+## 为什么我想这样写这本书
 
-**重要提示**：ElegantLaTeX 项目 **不接受** 任何非预授权的提交（pull requests）！
+因为如果只把泛函分析写成一串越来越抽象的定义，它会非常容易失去重心。
 
-## 致谢
+所以这本书一直想做的一件事，就是把概念重新落回到它们真正想解决的问题上。比如完备到底在保证什么，为什么压缩映射原理会稳定地产生唯一不动点，为什么“有界”这个词在函数空间里远不只是“数值不爆炸”，为什么距离空间、赋范空间和拓扑空间之间既有关联又有层次差别。  
 
-特别感谢 [sikouhjw](https://github.com/sikouhjw) 和 [syvshc](https://github.com/syvshc) 长期以来对于 Github 上 issue 的快速回应，以及各个社区论坛对于 ElegantLaTeX 相关问题的回复。
-特别感谢 ChinaTeX 以及 [LaTeX 工作室](http://www.latexstudio.net/)对于本系列模板的大力宣传与推广。
+书里有些 `dxtips` 我特别喜欢，就是因为它们会把这种关系讲得很直。像“压缩映射原理总结”“距离空间和赋范空间关系”“完备需要整两个点一个是存在”，这些话也许不够教科书，但它们很像真正的学习现场。它们保留的不是一个漂亮表述，而是抓概念时脑子里那根最重要的绳子。
 
-如果你喜欢我们的模板，你可以在 Github 上收藏我们的模板。
+我始终觉得，泛函分析最难的不是“内容太深”，而是“关系太多”。一旦这些关系没有被理顺，整门课就会像雾一样散开；可一旦开始看清楚对象之间是怎么搭起来的，这门课反而会变得异常有骨架。
 
-## 协议
+## 这本书想保住的主线
 
-本模板发布遵循 LaTeX 项目公共许可证 1.3 c 或更高版本。如果是衍生作品，请务必加入协议声明和模板信息（github、CTAN 地址）。
+它当然有清楚的主线。
 
-## 衍生作
+第一章从度量空间开始，经过完备性、压缩映射原理与拓扑空间，为整本书打地基。第二章进入赋范线性空间、凸集和 `L^p` 空间，开始真正感受到“空间”在结构上的层次差异。第三章围绕有界线性算子展开，进入 Banach-Steinhaus、开映射定理、闭图像定理、Hahn-Banach 定理、自反性与弱收敛这些核心主题。
 
-+ [ElegantBookdown](https://github.com/XiangyunHuang/ElegantBookdown)：[XiangyunHuang](https://github.com/XiangyunHuang) 开发并维护的基于 ElegantBook 的 Bookdown 模板。
-+ [bookdownplus](https://github.com/pzhaonet/bookdownplus)：应网友要求，[pzhaonet](https://github.com/pzhaonet) 在 bookdownplus 收录了 ElegantPaper 模板，并为 Mac 做了字体适配。
-+ [PanBook](https://github.com/annProg/PanBook)：[annProg](https://github.com/annProg) 开发并维护的基于 Markdown 写作的工作流，收录了 ElegantBook 和 ElegantPaper 模板。
+但如果只把它理解成“从定义到定理”的顺推，还是不够。因为这本书真正想保住的，是一种向上生长的视角: 你先有点和点之间的距离，再有可以做线性运算的空间，再有能够在空间之间搬运信息的算子，再有对偶、弱拓扑、自反性这种更高阶的结构。  
+
+也就是说，泛函分析并不是平地起高楼，而是一层层把前面的数学抬高。
+
+## 我想把它写给谁
+
+我想把它写给那种觉得泛函分析“像一团云”，但又隐约知道云里面应该有骨架的人。
+
+如果你现在就在第一遍学习里，那这本书最想帮你的，不是让你立刻记住所有结果，而是先把对象、关系和结论区分开。你要先分清自己现在讨论的是空间、是点列、是泛函，还是算子；是距离意义上的收敛，还是范数意义上的收敛，还是弱收敛。很多抽象感，其实都来自这几层东西在脑子里挤在一起。
+
+如果你已经学过一遍，再回来读这本书，你可能会更喜欢它保留下来的那些解释性片段。因为第二遍学泛函分析时，真正重要的往往不再是“知道有这个定理”，而是开始意识到这个定理为什么恰好在这里出现，它前后各自接住了什么。
+
+## 最后
+
+如果这本书最后能让你慢慢不再把泛函分析看成一堆高悬在半空中的抽象名词，而是看成一门不断在重组“空间、极限、连续、线性”这些核心观念的课程；如果它能让你在遇到一个新定义时，不再只问“这是什么意思”，还会问“它是在补哪一块结构”；如果它能让你感觉到，抽象并不是脱离直觉，而是在更高层次上保护直觉，那么这本书就已经达到了我最想让它达到的样子。
+
+## 仓库说明
+
+- 主文件是 `main.tex`。
+- 章节文件包括 `第一章.tex`、`第二章.tex`、`第三章有界算子.tex`。
+- 练习与补充内容在 `作业.tex`、`习题.tex`、`补充内容.tex`。
+- 若需要本地编译，通常运行 `xelatex main.tex` 两次即可。
