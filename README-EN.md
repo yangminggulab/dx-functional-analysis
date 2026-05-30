@@ -1,3 +1,37 @@
+## Overall Roadmap
+
+Following MIT OpenCourseWare functional analysis, the main line includes normed spaces, completeness, linear functionals, the Hahn-Banach theorem, duality, operators, Lebesgue measure, Lp spaces, and Hilbert spaces. This repository currently focuses on metric spaces, normed spaces, and bounded linear operators.
+
+```text
+Functional Analysis = doing linear algebra and analysis in infinite-dimensional spaces
+|
++-- The central problems
+|   +-- How can functions be treated as points in a space?
+|   |   +-- Use metrics, norms, and completeness to make function sets analyzable.
+|   +-- How can limits be controlled in infinite-dimensional spaces?
+|   |   +-- Use Banach spaces, contraction mappings, and compactness.
+|   +-- How can linear transformations acting on functions be studied?
+|       +-- Use bounded linear operators, linear functionals, dual spaces, and core theorems.
+|
++-- Tool 1: metric spaces -> clarify distance and limits first
+|   +-- Basic spaces and point-set language introduce neighborhoods, open/closed sets, closure
+|   +-- Complete metric spaces make Cauchy sequences converge
+|   +-- Contraction mapping principle proves existence and uniqueness by iteration
+|   +-- Topological-space supplements generalize metric intuition
+|
++-- Tool 2: normed linear spaces -> linear structure plus size
+|   +-- Norms and linear spaces preserve addition, scalar multiplication, and length
+|   +-- Convex sets prepare separation ideas such as Hahn-Banach
+|   +-- Lp spaces organize functions by integrability
+|   +-- Finite-dimensional normed spaces contrast finite and infinite dimensions
+|
++-- Tool 3: bounded linear operators -> matrices in infinite dimensions
+    +-- Bounded operators and functionals decide whether linear maps are continuous and controlled
+    +-- Banach-Steinhaus theorem moves from pointwise boundedness to uniform control
+    +-- Open mapping and closed graph theorems describe stability of linear operators
+    +-- Hahn-Banach theorem extends functionals and opens the door to duality
+```
+
 # dx's Functional Analysis
 
 ## Preface
@@ -21,12 +55,6 @@ The line of growth is upward: from distance, to linear space, to operators, to d
 ## Intended Readers
 
 This book is for readers who feel that functional analysis is cloudy but suspect that there is a skeleton inside. It tries to separate objects, relations, and theorems so the structure can be seen.
-
-## Overall Roadmap
-
-Following MIT OpenCourseWare functional analysis, the main line includes normed spaces, completeness, linear functionals, the Hahn-Banach theorem, duality, operators, Lebesgue measure, Lp spaces, and Hilbert spaces. This repository currently focuses on metric spaces, normed spaces, and bounded linear operators.
-
-```
 
 ## Repository Notes
 
