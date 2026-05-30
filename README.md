@@ -1,36 +1,84 @@
-# dx's Functional Analysis
+# dx 的泛函分析
 
-## Preface
+## 序
 
-Functional analysis can feel as if it is floating higher and higher above the ground. Spaces, operators, functionals, weak convergence, dual spaces, and reflexivity can look abstract enough that definitions are readable while the subject still feels hard to hold.
+泛函分析很容易让人产生一种“越学越飘”的感觉。
 
-The central goal of this book is to keep abstraction from floating away. Functional analysis reorganizes distance, norms, completeness, compactness, continuity, limits, function spaces, and linear structure into a larger framework.
+对象越来越抽象，空间、算子、泛函、弱收敛、对偶空间、自反性，一个个都不像前面学过的数学那样可以直接抓住。很多人学到这里，会有一种很真实的挫败感: 每个定义我都能读懂，可为什么越往后越像踩在云上？
 
-## Why This Book Is Written This Way
+我写这本书的时候，最在意的一件事就是: 不让抽象变成漂浮。
 
-If functional analysis is written only as a chain of increasingly abstract definitions, it loses its center. This book tries to attach each concept to the problem it solves.
+因为在我看来，泛函分析真正迷人的地方，从来不是它把对象弄得多高深，而是它在一个更高的层次上，把我们前面学过的很多数学重新组织了一遍。距离、范数、完备性、紧性、连续性、极限、函数空间、线性结构，这些东西本来就都学过；到了泛函分析，它们不再各自分散，而是开始彼此咬合，慢慢长成一套更大的框架。
 
-Completeness guarantees limits. Contraction mappings produce fixed points. Boundedness is the right form of continuity for linear maps. Metric spaces, normed spaces, and topological spaces form a hierarchy rather than a pile of terms.
+## 为什么我想这样写这本书
 
-## What This Book Keeps
+因为如果只把泛函分析写成一串越来越抽象的定义，它会非常容易失去重心。
 
-The first chapter starts with metric spaces, completeness, contraction mappings, and topological spaces. The second chapter develops normed linear spaces, convex sets, and Lp spaces. The third chapter studies bounded linear operators, Banach-Steinhaus, open mapping, closed graph, Hahn-Banach, reflexivity, and weak convergence.
+所以这本书一直想做的一件事，就是把概念重新落回到它们真正想解决的问题上。比如完备到底在保证什么，为什么压缩映射原理会稳定地产生唯一不动点，为什么“有界”这个词在函数空间里远不只是“数值不爆炸”，为什么距离空间、赋范空间和拓扑空间之间既有关联又有层次差别。
 
-The line of growth is upward: from distance, to linear space, to operators, to duality and weaker structures.
+书里有些 `dxtips` 我特别喜欢，就是因为它们会把这种关系讲得很直。像“压缩映射原理总结”“距离空间和赋范空间关系”“完备需要整两个点一个是存在”，这些话也许不够教科书，但它们很像真正的学习现场。它们保留的不是一个漂亮表述，而是抓概念时脑子里那根最重要的绳子。
 
-## Intended Readers
+我始终觉得，泛函分析最难的不是“内容太深”，而是“关系太多”。一旦这些关系没有被理顺，整门课就会像雾一样散开；可一旦开始看清楚对象之间是怎么搭起来的，这门课反而会变得异常有骨架。
 
-This book is for readers who feel that functional analysis is cloudy but suspect that there is a skeleton inside. It tries to separate objects, relations, and theorems so the structure can be seen.
+## 这本书想保住的主线
 
-## Overall Roadmap
+它当然有清楚的主线。
 
-Following MIT OpenCourseWare functional analysis, the main line includes normed spaces, completeness, linear functionals, the Hahn-Banach theorem, duality, operators, Lebesgue measure, Lp spaces, and Hilbert spaces. This repository currently focuses on metric spaces, normed spaces, and bounded linear operators.
+第一章从度量空间开始，经过完备性、压缩映射原理与拓扑空间，为整本书打地基。第二章进入赋范线性空间、凸集和 `L^p` 空间，开始真正感受到“空间”在结构上的层次差异。第三章围绕有界线性算子展开，进入 Banach-Steinhaus、开映射定理、闭图像定理、Hahn-Banach 定理、自反性与弱收敛这些核心主题。
 
+但如果只把它理解成“从定义到定理”的顺推，还是不够。因为这本书真正想保住的，是一种向上生长的视角: 你先有点和点之间的距离，再有可以做线性运算的空间，再有能够在空间之间搬运信息的算子，再有对偶、弱拓扑、自反性这种更高阶的结构。
+
+也就是说，泛函分析并不是平地起高楼，而是一层层把前面的数学抬高。
+
+## 我想把它写给谁
+
+我想把它写给那种觉得泛函分析“像一团云”，但又隐约知道云里面应该有骨架的人。
+
+如果你现在就在第一遍学习里，那这本书最想帮你的，不是让你立刻记住所有结果，而是先把对象、关系和结论区分开。你要先分清自己现在讨论的是空间、是点列、是泛函，还是算子；是距离意义上的收敛，还是范数意义上的收敛，还是弱收敛。很多抽象感，其实都来自这几层东西在脑子里挤在一起。
+
+如果你已经学过一遍，再回来读这本书，你可能会更喜欢它保留下来的那些解释性片段。因为第二遍学泛函分析时，真正重要的往往不再是“知道有这个定理”，而是开始意识到这个定理为什么恰好在这里出现，它前后各自接住了什么。
+
+## 最后
+
+如果这本书最后能让你慢慢不再把泛函分析看成一堆高悬在半空中的抽象名词，而是看成一门不断在重组“空间、极限、连续、线性”这些核心观念的课程；如果它能让你在遇到一个新定义时，不再只问“这是什么意思”，还会问“它是在补哪一块结构”；如果它能让你感觉到，抽象并不是脱离直觉，而是在更高层次上保护直觉，那么这本书就已经达到了我最想让它达到的样子。
+
+## 整体规划
+
+参考 MIT OpenCourseWare 泛函分析课程的框架：赋范空间、完备性、线性泛函、Hahn-Banach 定理、对偶、算子、Lebesgue 测度、Lp 空间和 Hilbert 空间共同构成主线；本仓库目前聚焦度量空间、赋范空间和有界线性算子。
+
+```text
+泛函分析 = 在无限维空间里做线性代数和分析
+│
+├── 这门课要解决的问题
+│   ├── 怎样把函数看成空间里的点？
+│   │   └── 用度量、范数、完备性把函数集合变成可分析的空间
+│   ├── 怎样控制无限维空间里的极限？
+│   │   └── 用 Banach 空间、压缩映射、紧性等工具处理收敛和存在性
+│   └── 怎样研究作用在函数上的线性变换？
+│       └── 用有界线性算子、线性泛函、对偶空间和基本定理组织结构
+│
+├── 工具一  度量空间  →  先把“距离”和“极限”说清楚
+│   ├── 基础空间与点集语言  建立邻域、开闭集、闭包等概念
+│   ├── 完备距离空间        保证 Cauchy 列真的有极限
+│   ├── 压缩映射原理        用迭代证明解的存在唯一
+│   └── 拓扑空间补充        把度量直觉推广到更一般环境
+│
+├── 工具二  赋范线性空间  →  线性结构 + 大小结构
+│   ├── 范数与线性空间      同时保留加法、数乘和长度
+│   ├── 凸集                为 Hahn-Banach 等分离思想做准备
+│   ├── Lp 空间             把函数按可积性放进统一家族
+│   └── 有穷维赋范空间      对比有限维和无限维的差异
+│
+└── 工具三  有界线性算子  →  无限维空间里的矩阵
+    ├── 有界算子与有界泛函      判断线性变换是否连续可控
+    ├── Banach-Steinhaus 定理    从逐点有界推出一致控制
+    ├── 开映射与闭图像定理      描述 Banach 空间上线性算子的稳定性
+    └── Hahn-Banach 定理         延拓泛函，是对偶理论的核心入口
 ```
 
-## Repository Notes
+## 仓库说明
 
-- The main entry is `main.tex`.
-- The chapter files cover metric spaces, normed linear spaces, and bounded linear operators.
-- Exercises and supplementary materials are kept separately.
-- For local compilation, running `xelatex main.tex` twice is usually enough.
+- 主文件是 `main.tex`。
+- 章节文件包括 `第一章.tex`、`第二章.tex`、`第三章有界算子.tex`。
+- 练习与补充内容在 `作业.tex`、`习题.tex`、`补充内容.tex`。
+- 若需要本地编译，通常运行 `xelatex main.tex` 两次即可。
